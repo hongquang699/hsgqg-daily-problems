@@ -86,6 +86,8 @@ const server=http.createServer((req,res)=>{
   if(req.method==='GET'&&pathname==='/api/contest') return send(res,200,githubSync.current().contest);
   if(req.method==='GET'&&pathname==='/api/sync-status') {const p=path.join(ROOT,'sync/status.json');return send(res,200,fs.existsSync(p)?JSON.parse(fs.readFileSync(p,'utf8')):{message:'Not checked yet'});}
   if(req.method==='GET'&&pathname==='/api/submissions') return send(res,200,history.map(({code,snapshot,...rest})=>rest));
+  if(req.method==='GET'&&pathname==='/editor.css') return send(res,200,fs.readFileSync(path.join(ROOT,'public/editor.css')),'text/css; charset=utf-8');
+  if(req.method==='GET'&&pathname==='/editor.js') return send(res,200,fs.readFileSync(path.join(ROOT,'public/editor.js')),'text/javascript; charset=utf-8');
   if(req.method==='POST'&&pathname==='/api/submit') {
     if(pending.size>=2) return send(res,429,{error:'Đang chấm tối đa 2 bài, vui lòng thử lại.'});
     let body='';req.on('data',chunk=>{body+=chunk;if(body.length>150000){req.destroy();}});
