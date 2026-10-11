@@ -8,24 +8,24 @@ Mini Online Judge **local** trên Windows, tự kiểm tra bài mới từ một
 - Mở PowerShell trong thư mục giải nén.
 - Chạy `docker pull gcc:14` (lần đầu cần Internet).
 - Chạy `Copy-Item sync.config.example.json sync.config.json`.
-- Sửa `sync.config.json` để điền GitHub username, repository và branch thật (xem mục 2).
+- Kiểm tra `sync.config.json` trỏ tới `hongquang699/hsgqg-daily-problems`, nhánh `master` (xem mục 2).
 - Chạy `node server.js`.
 - Mở http://localhost:3000.
 
 Không cần `npm install`; chương trình dùng Node.js built-in modules.
 
-## 2. Tạo nguồn GitHub
+## 2. Nguồn GitHub
 
-1. Đăng nhập GitHub, tạo **public repository** tên `hsgqg-daily-problems`.
-2. Upload **nội dung bên trong** thư mục `github-template/` vào **gốc repository**, sao cho có `manifest.json` và `days/2026-10-11/contest.json`, `days/2026-10-11/tests.json`.
-3. Sửa `sync.config.json`:
+Repository này đã chứa `manifest.json` và `days/2026-10-11/` ở gốc nhánh `master`. Thư mục `github-template/` chỉ là bản mẫu; Local Judge không tải từ thư mục đó.
+
+1. Kiểm tra `sync.config.json`:
 
 ```json
-{"owner":"TEN_GITHUB_CUA_BAN","repo":"hsgqg-daily-problems","branch":"main"}
+{"owner":"hongquang699","repo":"hsgqg-daily-problems","branch":"master"}
 ```
 
-4. Kiểm tra ngay: `node sync/github-sync.js --force`.
-5. Chạy `node server.js`, xem thông báo đồng bộ trên đầu trang. Xem chi tiết ở http://localhost:3000/api/sync-status.
+2. Kiểm tra ngay: `node sync/github-sync.js --force`.
+3. Chạy `node server.js`, xem thông báo đồng bộ trên đầu trang. Xem chi tiết ở http://localhost:3000/api/sync-status.
 
 **Quan trọng:** ChatGPT gửi đề hằng ngày **không tự push** vào GitHub. Bạn hoặc một workflow CI đã cấu hình phải publish đề và test lên repository. Bộ mã nguồn này đảm nhận việc **tự tải** từ GitHub về Local Judge, không tự sáng tác hoặc xuất bản bài mới.
 

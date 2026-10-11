@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "releases": [
+    {
+      "date": "2026-10-11",
+      "contest": "days/2026-10-11/contest.json",
+      "tests": "days/2026-10-11/tests.json",
+      "contestSha256": "1b906c7046a539d83abcdf049147bb6452cc93d2517530dded4c2c4e82e9d7ca",
+      "testsSha256": "90564581d9ab6f80d3b10a628800f44e276f29413fe8124ab0a54cb250adad37"
+    }
+  ]
+}
