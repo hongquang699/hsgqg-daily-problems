@@ -64,7 +64,7 @@ Ví dụ ngày `2026-10-12`:
 - Chạy thủ công: `node sync/github-sync.js --force`.
 - Kiểm tra trạng thái: `http://localhost:3000/api/sync-status` hoặc `sync/status.json`.
 - Bài đã tải lưu trong `problems/versions/`, `problems/active.json` trỏ đến phiên bản đang dùng.
-- Khung soạn C++ có tô màu cú pháp, số dòng, mở/tải tệp `.cpp` và tự lưu mã đang viết trong trình duyệt. Dùng Tab để thụt lề, Ctrl+S để tải mã và Ctrl+Enter để nộp bài.
+- Khung soạn C++ có tô màu cú pháp, số dòng, gợi ý từ khóa/STL/mẫu lệnh và tên đã dùng trong file, mở/tải tệp `.cpp`, tự lưu mã đang viết trong trình duyệt. Gõ ít nhất hai ký tự hoặc dùng Ctrl+Space để mở gợi ý; ↑↓/Enter để chọn, Esc để đóng. Tab thụt lề, Ctrl+S tải mã và Ctrl+Enter nộp bài.
 - Không có mạng vẫn sử dụng được bài đã tải và chấm Docker offline nếu image `gcc:14` đã có.
 - Nếu máy tắt lúc 19:00, lần khởi động tiếp theo sẽ kiểm tra bù.
 - Nếu chạy server liên tục, lịch 19:00 hoạt động theo múi giờ `Asia/Ho_Chi_Minh`.

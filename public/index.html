@@ -9,6 +9,7 @@
       <div class="file-tab"><span class="file-dot" aria-hidden="true"></span><span id="fileName">main.cpp</span></div>
       <div class="editor-tools">
         <label class="editor-tool editor-file-label" for="file">Mở .cpp<input id="file" type="file" accept=".cpp,.cc,.cxx,text/plain" aria-label="Mở tệp mã nguồn C++"></label>
+        <button class="editor-tool" id="showSuggestions" type="button" title="Gợi ý mã (Ctrl+Space)">Gợi ý</button>
         <button class="editor-tool" id="downloadCode" type="button" title="Lưu mã nguồn (Ctrl+S)">Tải mã</button>
       </div>
     </div>
@@ -16,7 +17,7 @@
       <div class="editor-gutter" aria-hidden="true"><pre class="line-numbers" id="lineNumbers"></pre></div>
       <div class="code-surface">
         <pre class="code-highlight" id="codeHighlight" aria-hidden="true"></pre>
-        <textarea class="code-input" id="code" aria-label="Mã nguồn C++17" spellcheck="false" autocomplete="off" autocapitalize="off" wrap="off">#include &lt;bits/stdc++.h&gt;
+        <textarea class="code-input" id="code" aria-label="Mã nguồn C++17" aria-controls="codeSuggestions" aria-haspopup="listbox" aria-expanded="false" spellcheck="false" autocomplete="off" autocapitalize="off" wrap="off">#include &lt;bits/stdc++.h&gt;
 using namespace std;
 int main() {
     ios::sync_with_stdio(false);
@@ -24,12 +25,13 @@ int main() {
     // Your code here
     return 0;
 }</textarea>
+        <div class="code-suggestions" id="codeSuggestions" role="listbox" aria-label="Gợi ý mã C++" hidden></div>
       </div>
     </div>
     <div class="editor-status"><span id="cursorPosition">Ln 1, Col 1</span><span id="characterCount">0 ký tự</span></div>
   </div>
   <div class="editor-actions">
-    <p class="editor-help">Tab: thụt lề · Ctrl+S: tải mã · Ctrl+Enter: nộp bài</p>
+    <p class="editor-help">Ctrl+Space: gợi ý · ↑↓/Enter: chọn · Esc: đóng · Tab: thụt lề · Ctrl+S: tải mã · Ctrl+Enter: nộp bài</p>
     <button id="submit" type="button">Nộp bài &amp; chấm</button>
   </div>
   <p class="editor-status-message" id="status" role="status" aria-live="polite"></p>
