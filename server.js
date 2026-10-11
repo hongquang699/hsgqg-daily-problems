@@ -13,7 +13,7 @@ const history = [];
 const pending = new Set();
 function send(res, code, data, type='application/json; charset=utf-8') {
   res.writeHead(code, {'Content-Type':type,'Cache-Control':'no-store','X-Content-Type-Options':'nosniff'});
-  res.end(typeof data === 'string' ? data : JSON.stringify(data));
+  res.end(Buffer.isBuffer(data) || typeof data === 'string' ? data : JSON.stringify(data));
 }
 function runDocker(args, timeoutMs, input='') {
   return new Promise(resolve => {
