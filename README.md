@@ -36,7 +36,7 @@ Ví dụ ngày `2026-10-12`:
 1. Tạo `days/2026-10-12/contest.json` và `days/2026-10-12/tests.json`, theo cấu trúc mẫu của ngày 11.
 2. `contest.json` có `title`, `durationMinutes`, mảng `problems`; mỗi problem có `id`, `title`, `statement`, `input`, `output`, `constraints`, `sampleInput`, `sampleOutput`, `hint`, `timeLimitMs`, `memoryLimitMb`, `subtasks` (tổng điểm 100).
 3. `tests.json` là object, key là `problem.id`, value là danh sách `{ "input":"...", "output":"...", "subtask":1 }`. Mỗi subtask phải có ít nhất một test.
-4. Tính SHA256 cho **bytes** của từng file:
+4. Tính SHA256 cho **bytes** của từng file. `.gitattributes` giữ các file trong `days/` ở định dạng xuống dòng LF trên Windows để hash local khớp với raw GitHub:
 
 ```powershell
 (Get-FileHash days/2026-10-12/contest.json -Algorithm SHA256).Hash.ToLower()
