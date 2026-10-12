@@ -1,0 +1,41 @@
+{
+  "title": "HSGQG Tin học — Ngày 12/10/2026 — Đoạn con đồng dư",
+  "durationMinutes": 90,
+  "problems": [
+    {
+      "id": "MODSEG",
+      "title": "Đoạn con đồng dư",
+      "timeLimitMs": 2000,
+      "memoryLimitMb": 256,
+      "statement": "Cho N số nguyên A1, A2, ..., AN (có thể âm), số nguyên dương K và hai số L, R. Tìm tổng lớn nhất của một đoạn con liên tiếp [l,r] có L <= r-l+1 <= R và tổng chia hết cho K. Nếu không có đoạn hợp lệ, in IMPOSSIBLE.",
+      "input": "Dòng 1: N K L R. Dòng 2: N số nguyên Ai.",
+      "output": "In tổng lớn nhất của đoạn hợp lệ, hoặc IMPOSSIBLE.",
+      "constraints": "1 <= N,K <= 200000; 1 <= L <= R <= N; -10^9 <= Ai <= 10^9.",
+      "sampleInput": "8 4 2 5\n3 -2 5 -1 4 -3 2 6\n",
+      "sampleOutput": "8\n",
+      "hint": "Dùng tổng tiền tố. Với mỗi đầu phải, cần tìm tổng tiền tố nhỏ nhất có cùng phần dư trong cửa sổ chỉ số hợp lệ.",
+      "subtasks": [
+        {
+          "name": "Subtask 1",
+          "points": 20,
+          "description": "N <= 300"
+        },
+        {
+          "name": "Subtask 2",
+          "points": 25,
+          "description": "N <= 5000"
+        },
+        {
+          "name": "Subtask 3",
+          "points": 20,
+          "description": "L=1, R=N"
+        },
+        {
+          "name": "Subtask 4",
+          "points": 35,
+          "description": "Không có giới hạn bổ sung"
+        }
+      ]
+    }
+  ]
+}
