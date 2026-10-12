@@ -51,7 +51,9 @@ async function sync({force=false}={}){
   const eligible=manifest.releases.filter(x=>/^\d{4}-\d{2}-\d{2}$/.test(x.date)&&x.date<=today&&validPath(x.contest)&&validPath(x.tests)&&/^[a-f0-9]{64}$/.test(x.contestSha256)&&/^[a-f0-9]{64}$/.test(x.testsSha256)).sort((a,b)=>b.date.localeCompare(a.date));
   if(!eligible.length)throw Error('No published release available');
   const chosen=eligible[0];
-  const statePath=path.join(TARGET,'sync-state.json');
+  const activePath=path.join(TARGET,'active.json');
+  const activeFolder=fs.existsSync(activePath)?path.join(TARGET,'versions',readJSON(activePath).directory):TARGET;
+  const statePath=path.join(activeFolder,'sync-state.json');
   if(!force&&fs.existsSync(statePath)){
    const old=readJSON(statePath);
    if(old.date===chosen.date&&old.contestSha256===chosen.contestSha256&&old.testsSha256===chosen.testsSha256){status({ok:true,message:'Already up to date',date:chosen.date});return {ok:true,updated:false,date:chosen.date};}
@@ -85,10 +87,10 @@ function current(){
  return {contest:readJSON(path.join(folder,'contest.json')),tests:readJSON(path.join(folder,'tests.json'))};
 }
 function schedule(){
- let last='';
- async function tick(){const d=localDate();const t=localTime();if(t>='19:00'&&last!==d){last=d;console.log('[sync 19:00]',await sync());}}
+ let last='',lastAttempt=0;
+ async function tick(){const d=localDate();const t=localTime();if(t<'19:00'||last===d||Date.now()-lastAttempt<10*60*1000)return;lastAttempt=Date.now();const result=await sync();if(result.ok)last=d;console.log('[sync 19:00]',result);}
  // Catch up on startup, even when machine was off at 19:00.
- sync().then(r=>console.log('[sync startup]',r));
+ sync().then(r=>{if(r.ok&&localTime()>='19:00')last=localDate();console.log('[sync startup]',r);});
  setInterval(tick,30000).unref();
 }
 module.exports={sync,current,schedule,localDate};

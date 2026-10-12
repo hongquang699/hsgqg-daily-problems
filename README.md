@@ -67,8 +67,8 @@ Ví dụ ngày `2026-10-12`:
 - Khung soạn C++ có tô màu cú pháp, số dòng, gợi ý thư viện/hàm/từ khóa/mẫu lệnh và tên đã dùng trong file, mở/tải tệp `.cpp`, tự lưu mã đang viết trong trình duyệt. Gõ ít nhất hai ký tự, `#include <` hoặc dùng Ctrl+Space để mở gợi ý; ↑↓/Enter/Tab để chọn, Esc để đóng. Tab thụt lề khi không có gợi ý; Ctrl+S tải mã và Ctrl+Enter nộp bài.
 - Không có mạng vẫn sử dụng được bài đã tải và chấm Docker offline nếu image `gcc:14` đã có.
 - Nếu máy tắt lúc 19:00, lần khởi động tiếp theo sẽ kiểm tra bù.
-- Nếu chạy server liên tục, lịch 19:00 hoạt động theo múi giờ `Asia/Ho_Chi_Minh`.
-- Có thể chạy `node server.js` bằng Windows Task Scheduler khi đăng nhập để tự khởi động.
+- Nếu chạy server liên tục, lịch 19:00 hoạt động theo múi giờ `Asia/Ho_Chi_Minh`; khi kiểm tra thất bại, server thử lại sau 10 phút.
+- Có thể tạo Windows Scheduled Task chạy `node sync/github-sync.js` hằng ngày để đồng bộ cả khi trang Judge không mở. Bật `StartWhenAvailable` để chạy bù khi máy khởi động sau giờ hẹn; có thể đặt thêm các lần kiểm tra trong buổi tối nếu bài được đăng muộn.
 
 ## 5. Giới hạn và bảo mật
 
