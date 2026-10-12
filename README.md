@@ -64,7 +64,7 @@ Ví dụ ngày `2026-10-12`:
 - Chạy thủ công: `node sync/github-sync.js --force`.
 - Kiểm tra trạng thái: `http://localhost:3000/api/sync-status` hoặc `sync/status.json`.
 - Bài đã tải lưu trong `problems/versions/`, `problems/active.json` trỏ đến phiên bản đang dùng.
-- Khung soạn C++ có tô màu cú pháp, số dòng, gợi ý từ khóa/STL/mẫu lệnh và tên đã dùng trong file, mở/tải tệp `.cpp`, tự lưu mã đang viết trong trình duyệt. Gõ ít nhất hai ký tự hoặc dùng Ctrl+Space để mở gợi ý; ↑↓/Enter để chọn, Esc để đóng. Tab thụt lề, Ctrl+S tải mã và Ctrl+Enter nộp bài.
+- Khung soạn C++ có tô màu cú pháp, số dòng, gợi ý thư viện/hàm/từ khóa/mẫu lệnh và tên đã dùng trong file, mở/tải tệp `.cpp`, tự lưu mã đang viết trong trình duyệt. Gõ ít nhất hai ký tự, `#include <` hoặc dùng Ctrl+Space để mở gợi ý; ↑↓/Enter/Tab để chọn, Esc để đóng. Tab thụt lề khi không có gợi ý; Ctrl+S tải mã và Ctrl+Enter nộp bài.
 - Không có mạng vẫn sử dụng được bài đã tải và chấm Docker offline nếu image `gcc:14` đã có.
 - Nếu máy tắt lúc 19:00, lần khởi động tiếp theo sẽ kiểm tra bù.
 - Nếu chạy server liên tục, lịch 19:00 hoạt động theo múi giờ `Asia/Ho_Chi_Minh`.
@@ -78,5 +78,5 @@ Ví dụ ngày `2026-10-12`:
 - Đề và đáp án trong **public repository có thể bị xem trực tiếp**. Vì vậy phù hợp cho **tự luyện**, KHÔNG dùng làm kỳ thi chống gian lận. Muốn giấu test cần nguồn private có xác thực, backend riêng và quản lý quyền.
 - Test mẫu trong package chưa đủ chấm chuẩn HSGQG; bổ sung bộ test chất lượng trước khi tin điểm.
 - Docker sandbox không phải ranh giới bảo mật tuyệt đối cho code độc hại; không triển khai Judge này cho người lạ trên máy chứa dữ liệu nhạy cảm.
-- TLE đo thời gian wall-clock bao gồm overhead Docker, chỉ tham khảo; history bài nộp chỉ lưu RAM.
+- Giới hạn thời gian chạy được áp dụng bên trong container, không tính thời gian khởi động Docker; thời gian `elapsedMs` trong API vẫn bao gồm overhead Docker. History bài nộp chỉ lưu RAM.
 - Mỗi subtask được điểm khi toàn bộ test trong subtask AC. Mã nguồn giới hạn 100 KB, tối đa 2 bài đang chấm.

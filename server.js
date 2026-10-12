@@ -45,8 +45,8 @@ async function judge(sub) {
     const common = ['run','--rm','--network','none','--cap-drop','ALL','--security-opt','no-new-privileges','--pids-limit','64','--cpus','1'];
     const compile = await runDocker([...common,'--memory','768m','-v',mount,'-w','/work','gcc:14','g++','-std=c++17','-O2','-pipe','-o','main','main.cpp'],30000);
     if (compile.error || compile.exceeded || compile.code !== 0) {
-      sub.verdict = compile.error ? 'SYSTEM ERROR' : compile.exceeded ? 'CE' : 'CE';
-      sub.details = (compile.error || compile.stderr || 'Compilation timeout').slice(0,4000);
+      sub.verdict = compile.error || compile.exceeded || compile.code === 125 ? 'SYSTEM ERROR' : 'CE';
+      sub.details = (compile.error || compile.stderr || 'Không thể hoàn tất biên dịch trong Docker.').slice(0,4000);
       sub.status='done';return;
     }
     const testset = tests[sub.problemId] || [];
@@ -55,10 +55,11 @@ async function judge(sub) {
     for (let i=0;i<testset.length;i++) {
       const t=testset[i];
       const started=Date.now();
-      const result=await runDocker([...common,'--memory',`${problem.memoryLimitMb}m`,'--memory-swap',`${problem.memoryLimitMb}m`,'--read-only','--tmpfs','/tmp:rw,noexec,nosuid,size=16m','-v',`${dir}:/work:ro`,'-w','/work','gcc:14','./main'],problem.timeLimitMs+1500,t.input);
+      const limitSeconds=(problem.timeLimitMs/1000).toFixed(3)+'s';
+      const result=await runDocker([...common,'-i','--memory',`${problem.memoryLimitMb}m`,'--memory-swap',`${problem.memoryLimitMb}m`,'--read-only','--tmpfs','/tmp:rw,noexec,nosuid,size=16m','-v',`${dir}:/work:ro`,'-w','/work','gcc:14','timeout','--signal=TERM','--kill-after=1s',limitSeconds,'./main'],Math.max(15000,problem.timeLimitMs+10000),t.input);
       let verdict='AC';
-      if (result.error) verdict='SYSTEM ERROR';
-      else if (result.exceeded) verdict='TLE';
+      if (result.error || result.exceeded || result.code === 125) verdict='SYSTEM ERROR';
+      else if (result.code === 124) verdict='TLE';
       else if (result.truncated) verdict='OLE';
       else if (result.code !== 0) verdict='RTE';
       else if (normalize(result.stdout)!==normalize(t.output)) verdict='WA';
@@ -76,7 +77,8 @@ async function judge(sub) {
     sub.verdict=outcomes.every(o=>o.verdict==='AC') && outcomes.length===testset.length?'AC':(outcomes.find(o=>o.verdict!=='AC')||{}).verdict||'SYSTEM ERROR';
     sub.subtasks=subtaskResults;
     sub.tests=outcomes;
-    sub.details='Bộ test minh họa cục bộ, không phải bộ test chính thức của kỳ thi.';
+    const failed=outcomes.filter(o=>o.verdict!=='AC');
+    sub.details=failed.length ? failed.slice(0,5).map(o=>`Test ${o.test} (Subtask ${o.subtask}): ${o.verdict}`).join(' · ') + (failed.length>5?` · và ${failed.length-5} test khác`:'') : 'Bộ test minh họa cục bộ, không phải bộ test chính thức của kỳ thi.';
     sub.status='done';
   } catch(e) {sub.status='done';sub.verdict='SYSTEM ERROR';sub.details=e.message;}
   finally {fs.rmSync(dir,{recursive:true,force:true});pending.delete(sub.id);}
