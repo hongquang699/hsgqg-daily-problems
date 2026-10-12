@@ -26,15 +26,33 @@
     {label:'cout', kind:'Mẫu', detail:'in kết quả', insert:"cout << | << '\\n';"},
     {label:'cin', kind:'Mẫu', detail:'đọc dữ liệu', insert:'cin >> |;'},
     {label:'vector', kind:'Mẫu', detail:'mảng động', insert:'vector<|>'},
-    {label:'sort', kind:'Mẫu', detail:'sắp xếp', insert:'sort(a.begin(), a.end());|'},
-    {label:'lower_bound', kind:'Mẫu', detail:'tìm kiếm nhị phân', insert:'lower_bound(a.begin(), a.end(), |)'},
-    {label:'upper_bound', kind:'Mẫu', detail:'tìm kiếm nhị phân', insert:'upper_bound(a.begin(), a.end(), |)'}
+    {label:'include', kind:'Chỉ thị', detail:'#include <...>', insert:'#include <|>'}
   ];
-  const standardNames = 'push_back emplace_back begin end size empty clear find count insert erase resize reserve front back min max abs gcd lcm swap reverse accumulate binary_search make_pair to_string getline'.split(' ');
+  const headers = 'algorithm array bitset cassert cctype cerrno chrono climits cmath cstdint cstdio cstdlib cstring deque functional iomanip iostream iterator limits map numeric queue set sstream stack string tuple unordered_map unordered_set utility vector bits/stdc++.h'.split(' ')
+    .map(label => ({label, kind:'Thư viện', detail:'#include <' + label + '>', insert:label}));
+  const functions = [
+    ['sort','sort(first, last)'], ['stable_sort','stable_sort(first, last)'],
+    ['lower_bound','lower_bound(first, last, value)'], ['upper_bound','upper_bound(first, last, value)'],
+    ['binary_search','binary_search(first, last, value)'], ['reverse','reverse(first, last)'],
+    ['rotate','rotate(first, middle, last)'], ['unique','unique(first, last)'],
+    ['next_permutation','next_permutation(first, last)'], ['min_element','min_element(first, last)'],
+    ['max_element','max_element(first, last)'], ['count','count(first, last, value)'],
+    ['find','find(first, last, value)'], ['accumulate','accumulate(first, last, initial)'],
+    ['iota','iota(first, last, value)'], ['gcd','gcd(a, b)'], ['lcm','lcm(a, b)'],
+    ['min','min(a, b)'], ['max','max(a, b)'], ['abs','abs(x)'], ['swap','swap(a, b)'],
+    ['to_string','to_string(value)'], ['stoi','stoi(text)'], ['stoll','stoll(text)'],
+    ['getline','getline(cin, text)'], ['make_pair','make_pair(a, b)'],
+    ['push_back','push_back(value)'], ['emplace_back','emplace_back(args...)'],
+    ['size','size()'], ['empty','empty()'], ['clear','clear()'],
+    ['begin','begin()'], ['end','end()'], ['front','front()'], ['back','back()'],
+    ['pop_back','pop_back()'], ['insert','insert(value)'], ['erase','erase(position)'],
+    ['resize','resize(count)'], ['reserve','reserve(count)'],
+    ['push','push(value)'], ['pop','pop()'], ['top','top()']
+  ].map(([label, detail]) => ({label, kind:'Hàm', detail, insert:label + '(|)'}));
   const fixedSuggestions = [
+    ...functions,
     ...[...keywords].map(label => ({label, kind:'Từ khóa', detail:'C++', insert:label})),
-    ...[...types].map(label => ({label, kind:'Kiểu', detail:'C++/STL', insert:label})),
-    ...standardNames.map(label => ({label, kind:'Hàm', detail:'STL', insert:label}))
+    ...[...types].map(label => ({label, kind:'Kiểu', detail:'C++/STL', insert:label}))
   ];
 
   function colorize(source) {
@@ -130,13 +148,22 @@
     if (!item) return;
     const end = input.selectionStart;
     const start = end - suggestionPrefix.length;
-    const marker = item.insert.indexOf('|');
+    const remaining = input.value.slice(end).match(item.kind === 'Thư viện' ? /^[A-Za-z_0-9./]*/ : /^[A-Za-z_0-9]*/);
+    const replacementEnd = end + (remaining ? remaining[0].length : 0);
     const lineStart = input.value.lastIndexOf('\n', start - 1) + 1;
+    const beforeWord = input.value.slice(lineStart, start);
+    let insert = item.insert;
+    if (item.kind === 'Thư viện') {
+      const closing = beforeWord.includes('"') ? '"' : '>';
+      if (input.value[replacementEnd] !== closing) insert += closing;
+    }
+    if (item.label === 'include' && /^\s*#/.test(beforeWord)) insert = insert.slice(1);
+    const marker = insert.indexOf('|');
     const baseIndent = (input.value.slice(lineStart, start).match(/^\s*/) || [''])[0];
     const withIndent = text => text.replace(/\n/g, '\n' + baseIndent);
-    const replacement = withIndent(marker < 0 ? item.insert : item.insert.slice(0, marker) + item.insert.slice(marker + 1));
-    input.setRangeText(replacement, start, end, 'end');
-    const cursor = start + (marker < 0 ? replacement.length : withIndent(item.insert.slice(0, marker)).length);
+    const replacement = withIndent(marker < 0 ? insert : insert.slice(0, marker) + insert.slice(marker + 1));
+    input.setRangeText(replacement, start, replacementEnd, 'end');
+    const cursor = start + (marker < 0 ? replacement.length : withIndent(insert.slice(0, marker)).length);
     input.setSelectionRange(cursor, cursor);
     input.dispatchEvent(new Event('input', {bubbles:true}));
     closeSuggestions();
@@ -147,22 +174,32 @@
     if (force) manualSuggestions = true;
     if (input.selectionStart !== input.selectionEnd) { closeSuggestions(); return; }
     const before = input.value.slice(0, input.selectionStart);
-    const match = before.match(/[A-Za-z_][A-Za-z_0-9]*$/);
-    const prefix = match ? match[0] : '';
     const line = before.slice(before.lastIndexOf('\n') + 1);
-    if (!manualSuggestions && prefix.length < 2 && !before.endsWith('::')) { closeSuggestions(); return; }
+    const includeMatch = line.match(/^\s*#\s*include\s*[<"]([A-Za-z_0-9./]*)$/);
+    const match = before.match(/[A-Za-z_][A-Za-z_0-9]*$/);
+    const prefix = includeMatch ? includeMatch[1] : match ? match[0] : '';
+    if (!manualSuggestions && !includeMatch && prefix.length < 2 && !before.endsWith('::')) { closeSuggestions(); return; }
     if (line.trimStart().startsWith('//')) { closeSuggestions(); return; }
 
-    const sourceWithoutLiterals = input.value.replace(/\/\/[^\n]*|\/\*[\s\S]*?\*\/|"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'/g, ' ');
-    const identifiers = [...new Set(sourceWithoutLiterals.match(/\b[A-Za-z_][A-Za-z_0-9]{1,}\b/g) || [])]
-      .filter(label => label !== prefix && !keywords.has(label) && !types.has(label))
-      .map(label => ({label, kind:'Trong file', detail:'đã dùng', insert:label}));
-    const seen = new Set();
-    suggestions = [...snippets, ...identifiers, ...fixedSuggestions].filter(item => {
-      if (seen.has(item.label)) return false;
-      seen.add(item.label);
-      return !prefix || item.label.startsWith(prefix);
-    }).slice(0, 8);
+    if (includeMatch) {
+      suggestions = headers.filter(item => item.label.startsWith(prefix)).slice(0, 12);
+    } else {
+      if (/^\s*#/.test(line) && !/^\s*#\s*incl\w*$/.test(line)) { closeSuggestions(); return; }
+
+      const sourceWithoutLiterals = input.value.replace(/\/\/[^\n]*|\/\*[\s\S]*?\*\/|"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'/g, ' ');
+      const identifiers = [...new Set(sourceWithoutLiterals.match(/\b[A-Za-z_][A-Za-z_0-9]{1,}\b/g) || [])]
+        .filter(label => label !== prefix && !keywords.has(label) && !types.has(label))
+        .map(label => ({label, kind:'Trong file', detail:'đã dùng', insert:label}));
+      const inNamespace = before.endsWith('::') || /\bstd::[A-Za-z_][A-Za-z_0-9]*$/.test(before);
+      const candidates = inNamespace ? [...fixedSuggestions, ...identifiers] : [...snippets, ...fixedSuggestions, ...identifiers];
+      const seen = new Set();
+      suggestions = candidates.filter(item => {
+        if (item.label === 'include' && !/^\s*#?\s*incl\w*$/.test(line)) return false;
+        if (seen.has(item.label)) return false;
+        seen.add(item.label);
+        return !prefix || item.label.startsWith(prefix);
+      }).slice(0, 12);
+    }
     if (!suggestions.length) { closeSuggestions(); return; }
     suggestionPrefix = prefix;
     selectedSuggestion = 0;
@@ -212,7 +249,7 @@
       markSelectedSuggestion();
       return;
     }
-    if (!suggestionBox.hidden && event.key === 'Enter' && !event.ctrlKey && !event.metaKey) {
+    if (!suggestionBox.hidden && (event.key === 'Enter' || (event.key === 'Tab' && !event.shiftKey)) && !event.ctrlKey && !event.metaKey) {
       event.preventDefault();
       acceptSuggestion();
       return;

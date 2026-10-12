@@ -23,13 +23,13 @@ main{max-width:1380px;grid-template-columns:minmax(320px,.9fr) minmax(520px,1.1f
 .code-highlight{z-index:1;overflow:hidden;color:#dbeafe;pointer-events:none}
 .code-input{z-index:2;resize:none;background:transparent;color:transparent;-webkit-text-fill-color:transparent;caret-color:#f8fafc;overflow:auto;outline:none}
 .code-input::selection{background:rgba(96,165,250,.38)}
-.code-suggestions{position:absolute;z-index:5;width:min(340px,calc(100% - 12px));max-height:230px;overflow:auto;background:#1b2d45;border:1px solid #5b7a9b;border-radius:8px;box-shadow:0 12px 28px rgba(0,0,0,.45);padding:4px}
+.code-suggestions{position:absolute;z-index:5;width:min(430px,calc(100% - 12px));max-height:300px;overflow:auto;background:#1b2d45;border:1px solid #5b7a9b;border-radius:8px;box-shadow:0 12px 28px rgba(0,0,0,.45);padding:4px}
 .code-suggestions[hidden]{display:none}
-.suggestion-option{display:flex;align-items:center;gap:9px;min-height:35px;padding:6px 8px;border-radius:5px;color:#e6f1ff;cursor:pointer;font:13px Consolas,'Courier New',monospace}
+.suggestion-option{display:flex;align-items:center;gap:9px;min-height:40px;padding:7px 8px;border-radius:5px;color:#e6f1ff;cursor:pointer;font:13px Consolas,'Courier New',monospace}
 .suggestion-option[aria-selected="true"],.suggestion-option:hover{background:#315578}
-.suggestion-kind{flex:none;color:#7dd3fc;font:600 10px system-ui,sans-serif;min-width:40px}
+.suggestion-kind{flex:none;color:#7dd3fc;font:600 10px system-ui,sans-serif;min-width:52px}
 .suggestion-label{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.suggestion-detail{margin-left:auto;color:#a9bfd3;font:11px system-ui,sans-serif;white-space:nowrap}
+.suggestion-detail{margin-left:auto;min-width:0;max-width:54%;overflow:hidden;text-overflow:ellipsis;color:#b9cbe0;font:11px system-ui,sans-serif;white-space:nowrap}
 .tok-keyword{color:#c4a7ff}.tok-type{color:#7dd3fc}.tok-string{color:#a7e6a1}.tok-number{color:#f7bf75}.tok-comment{color:#7f93a8}.tok-preprocessor{color:#f3a9c1}
 .editor-status{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:32px;padding:5px 12px;border-top:1px solid #314760;background:#14253b;color:#b8c9da;font:12px Consolas,monospace}
 .editor-actions{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 16px 17px}
