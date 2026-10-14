@@ -1,0 +1,42 @@
+{
+  "title": "HSGQG Tin học — 14/10/2026 — DP tối ưu",
+  "durationMinutes": 120,
+  "problems": [
+    {
+      "id": "KSEG",
+      "title": "Khoảng nghỉ giữa các đoạn",
+      "timeLimitMs": 4000,
+      "memoryLimitMb": 256,
+      "statement": "Cho dãy N số nguyên A1, A2, ..., AN (có thể âm). Hãy chọn đúng K đoạn con liên tiếp không rỗng [l1,r1],...,[lK,rK] theo thứ tự trái sang phải. Mỗi đoạn có độ dài từ L đến R. Giữa hai đoạn liên tiếp phải có ít nhất D phần tử không được chọn, tức l(i+1)-r(i)-1 >= D. Mỗi phần tử chỉ được tính nếu thuộc một đoạn được chọn. Tối đa hóa tổng tất cả phần tử trong đúng K đoạn. Dữ liệu bảo đảm K*L+(K-1)*D <= N nên luôn tồn tại cách chọn hợp lệ.",
+      "input": "Dòng đầu: N K L R D. Dòng thứ hai: N số nguyên Ai.",
+      "output": "In ra một số nguyên 64-bit duy nhất: tổng lớn nhất của đúng K đoạn hợp lệ (có thể âm).",
+      "constraints": "1 <= N <= 200000; 1 <= K <= 20; 1 <= L <= R <= N; 0 <= D <= N; -10^9 <= Ai <= 10^9; K*L+(K-1)*D <= N.",
+      "sampleInput": "10 2 2 3 1\n4 -2 5 1 -10 6 7 -3 2 4\n",
+      "sampleOutput": "20\n",
+      "explanation": "Chọn [1,3] có tổng 7 và [6,7] có tổng 13; giữa hai đoạn có 2 vị trí không chọn, đáp ứng D=1. Tổng tối ưu là 20.",
+      "hint": "Xét DP theo số đoạn và tiền tố. Với một điểm kết thúc cố định, tập các vị trí bắt đầu hợp lệ tạo thành một cửa sổ trượt trên tổng tiền tố.",
+      "subtasks": [
+        {
+          "name": "Subtask 1",
+          "points": 15,
+          "description": "N <= 18; K <= 3."
+        },
+        {
+          "name": "Subtask 2",
+          "points": 25,
+          "description": "N <= 1000; K <= 5."
+        },
+        {
+          "name": "Subtask 3",
+          "points": 25,
+          "description": "L = R; N <= 100000."
+        },
+        {
+          "name": "Subtask 4",
+          "points": 35,
+          "description": "Không có giới hạn bổ sung."
+        }
+      ]
+    }
+  ]
+}
