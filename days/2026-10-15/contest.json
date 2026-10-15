@@ -1,0 +1,42 @@
+{
+  "title": "HSGQG Tin học — 15/10/2026 — Cạnh đường bắt buộc",
+  "durationMinutes": 120,
+  "problems": [
+    {
+      "id": "BRIDGEPATH",
+      "title": "Cạnh đường bắt buộc",
+      "timeLimitMs": 3000,
+      "memoryLimitMb": 256,
+      "statement": "Một mạng lưới có N địa điểm và M con đường hai chiều, mỗi đường nối hai đỉnh phân biệt, không có cạnh trùng. Đồ thị có thể không liên thông. Với hai địa điểm u,v, một cạnh được gọi là bắt buộc nếu mọi đường đi từ u đến v đều đi qua cạnh đó. Cho Q truy vấn (u,v). Nếu u,v không liên thông, in -1; nếu liên thông, in số cạnh bắt buộc. Với u=v, đáp án bằng 0.",
+      "input": "Dòng đầu: N M Q. M dòng tiếp: a b mô tả một cạnh vô hướng. Q dòng cuối: u v mô tả truy vấn.",
+      "output": "In Q dòng, mỗi dòng là số cạnh bắt buộc hoặc -1 nếu không có đường đi.",
+      "constraints": "1 <= N <= 200000; 0 <= M <= 200000; 1 <= Q <= 200000; 1 <= a,b,u,v <= N; a != b; không có cạnh trùng nhau.",
+      "sampleInput": "9 9 10\n1 2\n2 3\n3 1\n3 4\n4 5\n5 6\n6 4\n6 7\n7 8\n1 2\n1 5\n2 7\n5 8\n1 8\n4 6\n7 7\n9 1\n9 9\n3 4\n",
+      "sampleOutput": "0\n1\n2\n2\n3\n0\n0\n-1\n0\n1\n",
+      "explanation": "1,2,3 tạo thành một chu trình; 4,5,6 tạo thành chu trình khác. Từ 1 đến 8 bắt buộc đi qua các cạnh (3,4),(6,7),(7,8). Đỉnh 9 tách biệt.",
+      "hint": "Hãy xét cạnh mà khi xóa sẽ làm tăng số thành phần liên thông. Các cạnh ấy liên quan gì đến mỗi truy vấn?",
+      "subtasks": [
+        {
+          "name": "Subtask 1",
+          "points": 15,
+          "description": "N <= 30; M <= 100; Q <= 100."
+        },
+        {
+          "name": "Subtask 2",
+          "points": 20,
+          "description": "Đồ thị là một rừng (không có chu trình)."
+        },
+        {
+          "name": "Subtask 3",
+          "points": 25,
+          "description": "N,M,Q <= 5000."
+        },
+        {
+          "name": "Subtask 4",
+          "points": 40,
+          "description": "Không có giới hạn bổ sung."
+        }
+      ]
+    }
+  ]
+}
