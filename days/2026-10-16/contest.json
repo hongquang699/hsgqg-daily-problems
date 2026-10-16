@@ -1,0 +1,41 @@
+{
+  "title": "HSGQG Tin học — 16/10/2026 — Xâu nâng cao",
+  "durationMinutes": 120,
+  "problems": [
+    {
+      "id": "FARREP",
+      "title": "Hai lần xuất hiện cách xa",
+      "timeLimitMs": 3000,
+      "memoryLimitMb": 256,
+      "statement": "Cho xâu S gồm N chữ cái tiếng Anh thường và số nguyên dương D. Hai lần xuất hiện của cùng một xâu con độ dài L bắt đầu tại i<j được gọi là đủ xa nếu j-i>=D. Hai xâu con phải giống hệt nhau và được phép chồng lấn. Tìm độ dài lớn nhất L sao cho tồn tại hai lần xuất hiện đủ xa của cùng một xâu con. Nếu không tồn tại xâu con không rỗng, in 0. Các vị trí đánh số từ 1.",
+      "input": "Dòng 1: N D. Dòng 2: xâu S có đúng N chữ cái thường.",
+      "output": "In một số nguyên duy nhất: độ dài lớn nhất L.",
+      "constraints": "2 <= N <= 200000; 1 <= D <= N-1; S chỉ gồm a..z. Hai lần xuất hiện được phép chồng lấn.",
+      "sampleInput": "12 5\nababaabababa\n",
+      "sampleOutput": "5\n",
+      "hint": "Xét vị trí xuất hiện sớm nhất và muộn nhất của cùng một xâu con. Điều kiện đủ xa phụ thuộc vào hai vị trí đó thế nào?",
+      "subtasks": [
+        {
+          "name": "Subtask 1",
+          "points": 15,
+          "description": "N <= 200."
+        },
+        {
+          "name": "Subtask 2",
+          "points": 25,
+          "description": "N <= 5000."
+        },
+        {
+          "name": "Subtask 3",
+          "points": 20,
+          "description": "D = 1."
+        },
+        {
+          "name": "Subtask 4",
+          "points": 40,
+          "description": "Không có giới hạn bổ sung."
+        }
+      ]
+    }
+  ]
+}
