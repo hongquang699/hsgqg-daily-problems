@@ -1,0 +1,41 @@
+{
+  "title": "HSGQG Tin học — 17/10/2026 — Truy vấn ngưỡng động",
+  "durationMinutes": 120,
+  "problems": [
+    {
+      "id": "DYNCOUNT",
+      "title": "Truy vấn ngưỡng động",
+      "timeLimitMs": 4000,
+      "memoryLimitMb": 256,
+      "statement": "Cho dãy N số nguyên A1, A2, ..., AN. Xử lý Q thao tác theo thứ tự: (1 p v) gán Ap = v; (2 l r x) đếm số vị trí i thỏa mãn l <= i <= r và Ai <= x tại thời điểm truy vấn. Dãy có thể chứa số âm, phần tử trùng nhau và nhiều cập nhật trên cùng vị trí. In đáp án cho mỗi thao tác loại 2.",
+      "input": "Dòng đầu: N Q. Dòng thứ hai: N số nguyên Ai. Q dòng tiếp theo là một trong hai dạng: 1 p v hoặc 2 l r x.",
+      "output": "Với mỗi thao tác loại 2, in số lượng phần tử không vượt quá x trong đoạn [l,r], mỗi kết quả một dòng.",
+      "constraints": "1 <= N,Q <= 200000; -10^9 <= Ai,v,x <= 10^9; 1 <= p <= N; 1 <= l <= r <= N.",
+      "sampleInput": "7 9\n5 -2 7 5 0 -2 9\n2 1 7 5\n1 3 -3\n2 2 5 -2\n2 1 7 0\n1 1 10\n2 1 4 5\n1 6 8\n2 5 7 8\n2 1 7 -3\n",
+      "sampleOutput": "5\n2\n4\n3\n2\n1\n",
+      "hint": "Nếu biết trước toàn bộ thao tác, một giá trị tại vị trí p có thể xuất hiện trong những cấu trúc đếm nào? Nghĩ đến Fenwick Tree theo vị trí kết hợp nén tọa độ cục bộ.",
+      "subtasks": [
+        {
+          "name": "Subtask 1",
+          "points": 15,
+          "description": "N,Q <= 300."
+        },
+        {
+          "name": "Subtask 2",
+          "points": 20,
+          "description": "Không có thao tác loại 1 (không cập nhật)."
+        },
+        {
+          "name": "Subtask 3",
+          "points": 25,
+          "description": "Mọi Ai, v, x thuộc đoạn [-50,50]."
+        },
+        {
+          "name": "Subtask 4",
+          "points": 40,
+          "description": "Không có giới hạn bổ sung."
+        }
+      ]
+    }
+  ]
+}
