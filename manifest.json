@@ -14,6 +14,27 @@
       "tests": "days/2026-10-12/tests.json",
       "contestSha256": "efc52e7c1828c0a3bdf29d108c6d96bfbb6c0f1fbb133205c59b3f266ced7b6b",
       "testsSha256": "f99a8add8426b5d4d35491c56d67a3feea5bb763bb2b75d6cf573715b8c7ef85"
+    },
+    {
+      "date": "2026-10-14",
+      "contest": "days/2026-10-14/contest.json",
+      "tests": "days/2026-10-14/tests.json",
+      "contestSha256": "bc102c12d0f3c640f7946bc35e0765997761823846c2ef89cf4479d5456f1d1e",
+      "testsSha256": "304c394d78931527c14fbdef244b079cb3096ac1201981f1bdbc6dfeb8555297"
+    },
+    {
+      "date": "2026-10-15",
+      "contest": "days/2026-10-15/contest.json",
+      "tests": "days/2026-10-15/tests.json",
+      "contestSha256": "e5b91f70dbedfcaa66e1eab3d1932dc38f188369d82e16b13a801a322f7bb066",
+      "testsSha256": "8ce939a9ae9911fb4f20335448515dd00f60fd8dc82ce64a50598fc1b0a5128a"
+    },
+    {
+      "date": "2026-10-16",
+      "contest": "days/2026-10-16/contest.json",
+      "tests": "days/2026-10-16/tests.json",
+      "contestSha256": "b780f240644d1762ef1b023be172a7c70be5c2d0bc3a285b2ed2ee4ebe20a733",
+      "testsSha256": "b745b4fbc9145dda20dd29e6f839dd0cb34ac5d212fac7a0d9f54758e279cd20"
     }
   ]
 }
