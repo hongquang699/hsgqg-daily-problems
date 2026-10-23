@@ -1,0 +1,42 @@
+{
+  "title": "HSGQG Tin học — 23/10/2026 — Số học và ƯCLN",
+  "durationMinutes": 120,
+  "problems": [
+    {
+      "id": "GCDLEN",
+      "title": "Ước chung đúng K",
+      "timeLimitMs": 3000,
+      "memoryLimitMb": 256,
+      "statement": "Cho dãy N số nguyên dương A1, A2, ..., AN và ba số nguyên dương K, L, R. Một đoạn con liên tiếp [l,r] hợp lệ nếu L <= r-l+1 <= R và ƯCLN(Al, Al+1, ..., Ar) = K. Đếm số đoạn con hợp lệ. Hai đoạn có cặp chỉ số khác nhau được tính riêng. Kết quả có thể vượt giới hạn số nguyên 32-bit.",
+      "input": "Dòng đầu chứa bốn số nguyên N K L R. Dòng thứ hai chứa N số nguyên dương A1, A2, ..., AN.",
+      "output": "In ra một số nguyên duy nhất: số đoạn con hợp lệ (số nguyên 64-bit).",
+      "constraints": "1 <= N <= 200000; 1 <= L <= R <= N; 1 <= K, Ai <= 10^9.",
+      "sampleInput": "9 2 2 4\n6 10 4 3 8 12 18 5 14\n",
+      "sampleOutput": "4\n",
+      "explanation": "Bốn đoạn hợp lệ là [1,2], [1,3], [2,3] và [5,7].",
+      "hint": "Khi cố định đầu phải của một đoạn, hãy quan sát số lượng giá trị ƯCLN khác nhau có thể xuất hiện khi thay đổi đầu trái.",
+      "subtasks": [
+        {
+          "name": "Subtask 1",
+          "points": 15,
+          "description": "N <= 200."
+        },
+        {
+          "name": "Subtask 2",
+          "points": 25,
+          "description": "N <= 5000."
+        },
+        {
+          "name": "Subtask 3",
+          "points": 20,
+          "description": "L = 1 và R = N."
+        },
+        {
+          "name": "Subtask 4",
+          "points": 40,
+          "description": "Không có giới hạn bổ sung."
+        }
+      ]
+    }
+  ]
+}
