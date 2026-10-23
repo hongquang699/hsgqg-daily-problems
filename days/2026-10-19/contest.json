@@ -1,0 +1,42 @@
+{
+  "title": "HSGQG Tin học — 19/10/2026 — Nhị phân đáp án",
+  "durationMinutes": 120,
+  "problems": [
+    {
+      "id": "WINKTH",
+      "title": "Khoảng cách thứ K trong cửa sổ",
+      "timeLimitMs": 6000,
+      "memoryLimitMb": 256,
+      "statement": "Cho dãy N số nguyên A1, A2, ..., AN và hai số nguyên W, K. Xét mọi cặp chỉ số (i,j) với 1 <= i < j <= N và j-i <= W. Khoảng cách của cặp là |Ai-Aj|. Sắp xếp khoảng cách của tất cả các cặp hợp lệ theo thứ tự không giảm; các cặp khác nhau có cùng khoảng cách vẫn được tính riêng. Hãy tìm khoảng cách nhỏ thứ K.",
+      "input": "Dòng đầu: N W K. Dòng thứ hai: N số nguyên Ai.",
+      "output": "In ra một số nguyên duy nhất: khoảng cách nhỏ thứ K.",
+      "constraints": "2 <= N <= 100000; 1 <= W <= N-1; -10^9 <= Ai <= 10^9; 1 <= K <= W*(2*N-W-1)/2.",
+      "sampleInput": "7 3 8\n4 -1 4 7 0 -1 6\n",
+      "sampleOutput": "5\n",
+      "explanation": "Có 15 cặp hợp lệ; tám khoảng cách nhỏ nhất là 0,1,1,1,3,3,4,5.",
+      "hint": "Thử nhị phân đáp án X. Có thể đếm số cặp có khoảng cách không quá X và khoảng cách chỉ số không quá W hay không?",
+      "subtasks": [
+        {
+          "name": "Subtask 1",
+          "points": 20,
+          "description": "N <= 200."
+        },
+        {
+          "name": "Subtask 2",
+          "points": 20,
+          "description": "W = N-1."
+        },
+        {
+          "name": "Subtask 3",
+          "points": 20,
+          "description": "-100 <= Ai <= 100."
+        },
+        {
+          "name": "Subtask 4",
+          "points": 40,
+          "description": "Không có giới hạn bổ sung."
+        }
+      ]
+    }
+  ]
+}
