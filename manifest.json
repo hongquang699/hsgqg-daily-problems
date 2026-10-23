@@ -16,6 +16,13 @@
       "testsSha256": "f99a8add8426b5d4d35491c56d67a3feea5bb763bb2b75d6cf573715b8c7ef85"
     },
     {
+      "date": "2026-10-13",
+      "contest": "days/2026-10-13/contest.json",
+      "tests": "days/2026-10-13/tests.json",
+      "contestSha256": "f38dc016d51b2790efb21b9153b5364fe5e7d7e1a22e19a5ef6b2ee8101cb94f",
+      "testsSha256": "ed10e9e4081d73d92802c542b5d2732453032eecdeb39df15d04c09e348bb34c"
+    },
+    {
       "date": "2026-10-14",
       "contest": "days/2026-10-14/contest.json",
       "tests": "days/2026-10-14/tests.json",
@@ -42,6 +49,20 @@
       "tests": "days/2026-10-17/tests.json",
       "contestSha256": "02be4f7c0b213d400fbb0a306566f760b1f41a0c58df7a22efa76a4311556ad7",
       "testsSha256": "20bb20387efb7edb50a5a4308fcd9d8c742b06af44b42dacc90f07065722163b"
+    },
+    {
+      "date": "2026-10-21",
+      "contest": "days/2026-10-21/contest.json",
+      "tests": "days/2026-10-21/tests.json",
+      "contestSha256": "8c2108ba5648218790392f2847435f99eb9f7c50d1b8be86437d577b6e6ec32c",
+      "testsSha256": "35ea8500e05c0e99bdcebefdc6a2ebdbbb37f35a1b327939d07210a377d6cbbd"
+    },
+    {
+      "date": "2026-10-23",
+      "contest": "days/2026-10-23/contest.json",
+      "tests": "days/2026-10-23/tests.json",
+      "contestSha256": "36f3668dab316ad4a50e4fbd88f753e017c3e190ce32e9679429e3ae114e802c",
+      "testsSha256": "d6045c826ecab5b1fff052aad84cc08cdf7f6fde2fa8d1cc08a5c6b5a4b4aa1b"
     }
   ]
 }
