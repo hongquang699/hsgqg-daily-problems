@@ -1,0 +1,42 @@
+{
+  "title": "HSGQG Tin học — 20/10/2026 — Đồ thị và MST",
+  "durationMinutes": 120,
+  "problems": [
+    {
+      "id": "MSTCLASS",
+      "title": "Phân loại cạnh trong cây khung nhỏ nhất",
+      "timeLimitMs": 5000,
+      "memoryLimitMb": 256,
+      "statement": "Cho đồ thị vô hướng liên thông gồm N đỉnh và M cạnh có trọng số dương. Đồ thị có thể có cạnh song song; mỗi cạnh phân biệt bằng thứ tự nhập. Với mỗi cạnh e, hãy in 0 nếu e không thuộc bất kỳ cây khung nhỏ nhất (MST) nào; 1 nếu e thuộc ít nhất một MST nhưng không thuộc mọi MST; 2 nếu e thuộc mọi MST. In đáp án theo thứ tự các cạnh ban đầu.",
+      "input": "Dòng đầu: N M. M dòng tiếp theo: u v w mô tả cạnh vô hướng giữa u và v, trọng số w.",
+      "output": "In M dòng, dòng thứ i là 0, 1 hoặc 2 ứng với cạnh thứ i.",
+      "constraints": "2 <= N <= 100000; N-1 <= M <= 200000; 1 <= u,v <= N; u != v; 1 <= w <= 10^9; đồ thị liên thông; có thể có cạnh song song.",
+      "sampleInput": "5 7\n1 2 1\n2 3 2\n1 3 2\n3 4 3\n2 4 3\n4 5 4\n3 5 6\n",
+      "sampleOutput": "2\n1\n1\n1\n1\n2\n0\n",
+      "explanation": "Cạnh (1,2) và (4,5) có mặt trong mọi MST; các cạnh cùng trọng số tạo lựa chọn thay thế. Cạnh (3,5) không thuộc MST nào.",
+      "hint": "Khi xử lý một nhóm cạnh có cùng trọng số, hãy xét các thành phần liên thông được tạo bởi những cạnh có trọng số nhỏ hơn.",
+      "subtasks": [
+        {
+          "name": "Subtask 1",
+          "points": 15,
+          "description": "N <= 8; M <= 16."
+        },
+        {
+          "name": "Subtask 2",
+          "points": 20,
+          "description": "Các trọng số đôi một khác nhau."
+        },
+        {
+          "name": "Subtask 3",
+          "points": 25,
+          "description": "N <= 2000; M <= 5000."
+        },
+        {
+          "name": "Subtask 4",
+          "points": 40,
+          "description": "Không có giới hạn bổ sung."
+        }
+      ]
+    }
+  ]
+}
