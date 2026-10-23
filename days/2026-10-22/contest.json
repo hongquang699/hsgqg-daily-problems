@@ -1,0 +1,42 @@
+{
+  "title": "HSGQG Tin học — 22/10/2026 — Tổng tiền tố",
+  "durationMinutes": 120,
+  "problems": [
+    {
+      "id": "SUMWINDOW",
+      "title": "Đếm đoạn có tổng trong khoảng",
+      "timeLimitMs": 4000,
+      "memoryLimitMb": 256,
+      "statement": "Cho dãy N số nguyên A1, A2, ..., AN (có thể âm) và bốn số nguyên L, R, X, Y. Một đoạn con liên tiếp [l,r] hợp lệ nếu L <= r-l+1 <= R và X <= Al + ... + Ar <= Y. Đếm số đoạn con hợp lệ. Các cặp chỉ số (l,r) khác nhau được tính riêng. Kết quả có thể vượt giới hạn số nguyên 32-bit.",
+      "input": "Dòng đầu: N L R X Y. Dòng thứ hai: N số nguyên A1, ..., AN.",
+      "output": "In một số nguyên duy nhất là số đoạn con hợp lệ (số nguyên 64-bit).",
+      "constraints": "1 <= N <= 200000; 1 <= L <= R <= N; -10^9 <= Ai <= 10^9; -2*10^14 <= X <= Y <= 2*10^14.",
+      "sampleInput": "9 2 4 -1 5\n3 -2 4 -5 6 1 -3 2 -1\n",
+      "sampleOutput": "15\n",
+      "explanation": "Có 15 đoạn thỏa mãn cả điều kiện độ dài và tổng; ví dụ [1,3] có tổng 5, [1,4] có tổng 0, [3,4] có tổng -1.",
+      "hint": "Xét tổng tiền tố. Với mỗi điểm kết thúc r, các điểm bắt đầu hợp lệ nằm trong một khoảng chỉ số.",
+      "subtasks": [
+        {
+          "name": "Subtask 1",
+          "points": 15,
+          "description": "N <= 200."
+        },
+        {
+          "name": "Subtask 2",
+          "points": 25,
+          "description": "N <= 5000."
+        },
+        {
+          "name": "Subtask 3",
+          "points": 20,
+          "description": "Ai >= 0 với mọi i."
+        },
+        {
+          "name": "Subtask 4",
+          "points": 40,
+          "description": "Không có giới hạn bổ sung."
+        }
+      ]
+    }
+  ]
+}
