@@ -1,1 +1,42 @@
-{"title":"HSGQG Tin học 13/10/2026","durationMinutes":120,"problems":[]}
+{
+  "title": "HSGQG Tin học — 13/10/2026 — Nghịch thế cách xa (phục hồi)",
+  "durationMinutes": 120,
+  "problems": [
+    {
+      "id": "FARINV",
+      "title": "Nghịch thế cách xa",
+      "timeLimitMs": 3000,
+      "memoryLimitMb": 256,
+      "statement": "Cho dãy N số nguyên A1, A2, ..., AN và số nguyên dương D. Một cặp chỉ số (i,j) được gọi là nghịch thế cách xa nếu 1 <= i < j <= N, j-i >= D và Ai > Aj. Hãy đếm số cặp nghịch thế cách xa. Các cặp có chỉ số khác nhau được tính riêng. Kết quả có thể vượt giới hạn số nguyên 32-bit.",
+      "input": "Dòng đầu chứa hai số nguyên N, D. Dòng thứ hai chứa N số nguyên A1, A2, ..., AN.",
+      "output": "In một số nguyên duy nhất: số cặp (i,j) thỏa mãn.",
+      "constraints": "2 <= N <= 200000; 1 <= D < N; -10^9 <= Ai <= 10^9.",
+      "sampleInput": "7 2\n5 1 4 2 3 0 6\n",
+      "sampleOutput": "8\n",
+      "explanation": "Có tám cặp hợp lệ: (1,3), (1,4), (1,5), (1,6), (2,6), (3,5), (3,6), (4,6).",
+      "hint": "Khi xét điểm phải j, chỉ những điểm trái i <= j-D mới được phép tham gia. Hãy duy trì thông tin về các giá trị đã đủ xa.",
+      "subtasks": [
+        {
+          "name": "Subtask 1",
+          "points": 15,
+          "description": "N <= 200."
+        },
+        {
+          "name": "Subtask 2",
+          "points": 25,
+          "description": "N <= 5000."
+        },
+        {
+          "name": "Subtask 3",
+          "points": 20,
+          "description": "D = 1."
+        },
+        {
+          "name": "Subtask 4",
+          "points": 40,
+          "description": "Không có giới hạn bổ sung."
+        }
+      ]
+    }
+  ]
+}
