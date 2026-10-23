@@ -1,0 +1,42 @@
+{
+  "title": "HSGQG Tin học — 21/10/2026 — DP tối ưu",
+  "durationMinutes": 120,
+  "problems": [
+    {
+      "id": "QUADPART",
+      "title": "Phân đoạn chi phí bình phương",
+      "timeLimitMs": 5000,
+      "memoryLimitMb": 256,
+      "statement": "Cho dãy N số nguyên A1, A2, ..., AN, có thể âm, và số nguyên dương C. Chia toàn bộ dãy thành một số đoạn con liên tiếp không rỗng, mỗi phần tử thuộc đúng một đoạn. Chi phí đoạn [l,r] là (Al + ... + Ar)^2 + C. Hãy tìm tổng chi phí nhỏ nhất của một cách chia hợp lệ. Kết quả có thể lớn và cần sử dụng số nguyên 64-bit.",
+      "input": "Dòng đầu: N C. Dòng thứ hai: N số nguyên A1, A2, ..., AN.",
+      "output": "In ra một số nguyên duy nhất: tổng chi phí nhỏ nhất.",
+      "constraints": "1 <= N <= 200000; -100 <= Ai <= 100; 1 <= C <= 10^9. Đáp án vừa trong số nguyên 64-bit.",
+      "sampleInput": "6 3\n4 2 -3 5 -2 1\n",
+      "sampleOutput": "28\n",
+      "explanation": "Có thể chia thành các đoạn [1,3], [4,5], [6,6], tổng lần lượt là 3,3,1; tổng chi phí bằng (9+3)+(9+3)+(1+3)=28.",
+      "hint": "Biểu diễn tổng đoạn bằng hiệu hai tổng tiền tố, rồi khai triển bình phương trong công thức chuyển trạng thái.",
+      "subtasks": [
+        {
+          "name": "Subtask 1",
+          "points": 20,
+          "description": "N <= 400."
+        },
+        {
+          "name": "Subtask 2",
+          "points": 20,
+          "description": "Ai >= 0 với mọi i."
+        },
+        {
+          "name": "Subtask 3",
+          "points": 20,
+          "description": "|Ai| <= 10 với mọi i."
+        },
+        {
+          "name": "Subtask 4",
+          "points": 40,
+          "description": "Không có giới hạn bổ sung."
+        }
+      ]
+    }
+  ]
+}
