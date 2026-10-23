@@ -1,0 +1,42 @@
+{
+  "title": "HSGQG Tin học — 18/10/2026 — Số học",
+  "durationMinutes": 120,
+  "problems": [
+    {
+      "id": "PRODDIV",
+      "title": "Tích đoạn chia hết",
+      "timeLimitMs": 4000,
+      "memoryLimitMb": 256,
+      "statement": "Cho dãy N số nguyên không âm A1, A2, ..., AN và ba số nguyên dương K, L, R. Một đoạn con liên tiếp [l,r] hợp lệ nếu L <= r-l+1 <= R và tích Al * Al+1 * ... * Ar chia hết cho K. Đếm số đoạn con hợp lệ. Tích có thể rất lớn, không được giả định vừa trong 64-bit. Nếu đoạn chứa số 0, tích bằng 0 và chia hết cho mọi K dương.",
+      "input": "Dòng đầu: N K L R. Dòng thứ hai: N số nguyên không âm Ai.",
+      "output": "In một số nguyên duy nhất là số đoạn con hợp lệ (số nguyên 64-bit).",
+      "constraints": "1 <= N <= 200000; 1 <= K <= 10^12; 1 <= L <= R <= N; 0 <= Ai <= 10^9.",
+      "sampleInput": "8 12 2 4\n2 3 4 0 6 5 2 9\n",
+      "sampleOutput": "13\n",
+      "explanation": "Có 13 đoạn độ dài từ 2 đến 4 mà tích chia hết cho 12. Ví dụ [1,3] có tích 24; đoạn chứa vị trí 4 có tích bằng 0.",
+      "hint": "Không nhân trực tiếp các phần tử. Xét điều kiện chia hết qua các thừa số nguyên tố của K.",
+      "subtasks": [
+        {
+          "name": "Subtask 1",
+          "points": 15,
+          "description": "N <= 100; K <= 10^6; Ai >= 1."
+        },
+        {
+          "name": "Subtask 2",
+          "points": 20,
+          "description": "N <= 5000; Ai >= 1."
+        },
+        {
+          "name": "Subtask 3",
+          "points": 25,
+          "description": "K là số nguyên tố."
+        },
+        {
+          "name": "Subtask 4",
+          "points": 40,
+          "description": "Không có giới hạn bổ sung."
+        }
+      ]
+    }
+  ]
+}
