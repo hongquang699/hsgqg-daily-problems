@@ -51,11 +51,39 @@
       "testsSha256": "20bb20387efb7edb50a5a4308fcd9d8c742b06af44b42dacc90f07065722163b"
     },
     {
+      "date": "2026-10-18",
+      "contest": "days/2026-10-18/contest.json",
+      "tests": "days/2026-10-18/tests.json",
+      "contestSha256": "1c2d72f4db78a2785ccaffaf3944e4efde864a0bac4a5cbf793bab782fbc8059",
+      "testsSha256": "376510fea39d6c24c88f3ff107ad1d60fbbfc06da8df70891648b6c884094c02"
+    },
+    {
+      "date": "2026-10-19",
+      "contest": "days/2026-10-19/contest.json",
+      "tests": "days/2026-10-19/tests.json",
+      "contestSha256": "525aa9e5e0c7c155d355041e92e227fc40c6b204a2f6d1e6f5045152ff4a947b",
+      "testsSha256": "6ac27b932ec05b6a591fd43d05396d4eb892c19230ee7cf3a5c0d746ab76ec72"
+    },
+    {
+      "date": "2026-10-20",
+      "contest": "days/2026-10-20/contest.json",
+      "tests": "days/2026-10-20/tests.json",
+      "contestSha256": "c82003351554c541bdebb2ed2ef468ee09a7769fa2dbd5be1de5c13911ea7630",
+      "testsSha256": "0b3845278b914ec7d5c105c7a5ae0b5a84ee53b9ce1540730e2f2a371db86392"
+    },
+    {
       "date": "2026-10-21",
       "contest": "days/2026-10-21/contest.json",
       "tests": "days/2026-10-21/tests.json",
       "contestSha256": "8c2108ba5648218790392f2847435f99eb9f7c50d1b8be86437d577b6e6ec32c",
       "testsSha256": "35ea8500e05c0e99bdcebefdc6a2ebdbbb37f35a1b327939d07210a377d6cbbd"
+    },
+    {
+      "date": "2026-10-22",
+      "contest": "days/2026-10-22/contest.json",
+      "tests": "days/2026-10-22/tests.json",
+      "contestSha256": "c8b065d42bbb6824c22fa41f51b7e13768157f579d06d8c93f1b865d5da337b2",
+      "testsSha256": "68eab338a68bda193463fb2e7ede4695a35cd573aa79ab0ee331c3ab5130b939"
     },
     {
       "date": "2026-10-23",
