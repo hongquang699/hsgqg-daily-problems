@@ -1,0 +1,42 @@
+{
+  "title": "HSGQG Tin học — 24/10/2026 — Binary Search và trung bình đoạn",
+  "durationMinutes": 120,
+  "problems": [
+    {
+      "id": "MAXAVG",
+      "title": "Trung bình đoạn tối ưu",
+      "timeLimitMs": 3000,
+      "memoryLimitMb": 256,
+      "statement": "Cho dãy N số nguyên A1, A2, ..., AN (có thể âm) và hai số nguyên L, R. Chọn một đoạn con liên tiếp không rỗng [l,r] có độ dài L <= r-l+1 <= R. Gọi M là giá trị trung bình cộng lớn nhất trong tất cả các đoạn hợp lệ: M = max((Al+...+Ar)/(r-l+1)). Hãy in ra floor(M), tức số nguyên lớn nhất không vượt quá M. Lưu ý floor(-4.5) = -5, không phải -4.",
+      "input": "Dòng đầu chứa ba số nguyên N L R. Dòng thứ hai chứa N số nguyên A1, A2, ..., AN.",
+      "output": "In một số nguyên duy nhất: floor(M).",
+      "constraints": "1 <= N <= 200000; 1 <= L <= R <= N; -10^9 <= Ai <= 10^9.",
+      "sampleInput": "10 3 5\n-5 8 2 -3 7 -1 4 6 -9 5\n",
+      "sampleOutput": "4\n",
+      "explanation": "Đoạn [5,8] gồm 7, -1, 4, 6 có trung bình bằng 4. Không tồn tại đoạn hợp lệ có trung bình lớn hơn 4.",
+      "hint": "Thử kiểm tra một ngưỡng X cho trước: có đoạn dài từ L đến R mà tổng các giá trị (Ai - X) không âm hay không?",
+      "subtasks": [
+        {
+          "name": "Subtask 1",
+          "points": 15,
+          "description": "N <= 200."
+        },
+        {
+          "name": "Subtask 2",
+          "points": 20,
+          "description": "N <= 5000."
+        },
+        {
+          "name": "Subtask 3",
+          "points": 25,
+          "description": "Ai >= 0 với mọi i."
+        },
+        {
+          "name": "Subtask 4",
+          "points": 40,
+          "description": "Không có giới hạn bổ sung."
+        }
+      ]
+    }
+  ]
+}
