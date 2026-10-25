@@ -98,6 +98,13 @@
       "tests": "days/2026-10-24/tests.json",
       "contestSha256": "45c8ed192c475058036ce558189b1b40fb513c6aa0ffc4039a286002f9784028",
       "testsSha256": "a2884c098d4d48dd90ddc7e3210e71ba02d7f9fd1963268f0d6e64d0bf277556"
+    },
+    {
+      "date": "2026-10-25",
+      "contest": "days/2026-10-25/contest.json",
+      "tests": "days/2026-10-25/tests.json",
+      "contestSha256": "edd4e33c2e6762350db1d3d9c6160b15ab9101aa75cbe39b011ccbac99378354",
+      "testsSha256": "b0c297926296178561beefcf9ceb17270dfd51e8e5054ff09edd79e39640ac12"
     }
   ]
 }
