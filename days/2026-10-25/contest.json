@@ -1,0 +1,42 @@
+{
+  "title": "HSGQG Tin học — 25/10/2026 — Quy hoạch động và đếm phương án tối ưu",
+  "durationMinutes": 120,
+  "problems": [
+    {
+      "id": "JUMPCOUNT",
+      "title": "Đường nhảy tối ưu",
+      "timeLimitMs": 3000,
+      "memoryLimitMb": 256,
+      "statement": "Có N trạm trung gian đánh số 1..N, điểm xuất phát 0 và đích N+1. Trạm i có điểm thưởng Ai (có thể âm). Từ vị trí i được nhảy tới j>i khi L <= j-i <= R. Khi tới trạm trung gian j, nhận thêm Aj điểm; điểm xuất phát và đích không có thưởng. Hành trình bắt đầu tại 0, kết thúc tại N+1. Hai hành trình khác nhau nếu dãy vị trí ghé thăm khác nhau. Tìm tổng điểm lớn nhất và số hành trình đạt tổng đó modulo 1000000007. Nếu không tồn tại hành trình hợp lệ, in IMPOSSIBLE.",
+      "input": "Dòng 1: N L R. Dòng 2: N số nguyên A1, A2, ..., AN.",
+      "output": "Nếu không có hành trình hợp lệ, in IMPOSSIBLE. Ngược lại, in hai số nguyên: tổng điểm tối đa và số hành trình tối ưu modulo 1000000007.",
+      "constraints": "1 <= N <= 200000; 1 <= L <= R <= N+1; -10^9 <= Ai <= 10^9.",
+      "sampleInput": "6 2 3\n-2 -1 -1 2 2 -2\n",
+      "sampleOutput": "1 3\n",
+      "explanation": "Ba hành trình đạt tổng điểm 1: 0->2->4->7, 0->2->5->7 và 0->3->5->7. Không có hành trình nào có tổng điểm lớn hơn.",
+      "hint": "Xét phương án tối ưu kết thúc tại từng vị trí. Với mỗi vị trí hiện tại, các vị trí có thể nhảy tới nó tạo thành một khoảng chỉ số liên tiếp. Hãy nghĩ cách lấy cả giá trị tốt nhất và số cách đạt giá trị đó trên một khoảng.",
+      "subtasks": [
+        {
+          "name": "Subtask 1",
+          "points": 15,
+          "description": "N <= 20."
+        },
+        {
+          "name": "Subtask 2",
+          "points": 20,
+          "description": "N <= 2000."
+        },
+        {
+          "name": "Subtask 3",
+          "points": 25,
+          "description": "L = R."
+        },
+        {
+          "name": "Subtask 4",
+          "points": 40,
+          "description": "Không có giới hạn bổ sung."
+        }
+      ]
+    }
+  ]
+}
