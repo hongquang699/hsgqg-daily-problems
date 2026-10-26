@@ -1,0 +1,42 @@
+{
+  "title": "HSGQG Tin học — 26/10/2026 — Xâu ký tự và thống kê xâu con",
+  "durationMinutes": 120,
+  "problems": [
+    {
+      "id": "SUBFREQ",
+      "title": "Đếm xâu con lặp lại",
+      "timeLimitMs": 3000,
+      "memoryLimitMb": 256,
+      "statement": "Cho xâu S gồm N ký tự tiếng Anh thường và số nguyên dương K. Một xâu T là xâu con không rỗng nếu T xuất hiện dưới dạng một đoạn ký tự liên tiếp trong S. Số lần xuất hiện của T là số vị trí bắt đầu khác nhau mà T xuất hiện trong S; các lần xuất hiện được phép chồng lấn. Hai xâu con có nội dung giống nhau chỉ được tính một lần, dù xuất hiện tại nhiều vị trí. Hãy đếm số xâu con phân biệt không rỗng xuất hiện ít nhất K lần.",
+      "input": "Dòng 1: hai số nguyên N và K. Dòng 2: xâu S gồm đúng N ký tự thường a..z.",
+      "output": "In một số nguyên duy nhất: số xâu con phân biệt của S xuất hiện ít nhất K lần.",
+      "constraints": "1 <= N <= 200000; 1 <= K <= N; S chỉ chứa ký tự a..z. Đáp án có thể vượt giới hạn số nguyên 32-bit.",
+      "sampleInput": "12 3\nababaabababa\n",
+      "sampleOutput": "9\n",
+      "explanation": "Có 9 xâu con phân biệt xuất hiện ít nhất 3 lần: a, b, ab, ba, aba, bab, abab, baba, ababa.",
+      "hint": "Số xâu con theo vị trí có thể đạt O(N^2), nhưng nhiều xâu con có cùng nội dung. Hãy tìm cách biểu diễn gọn các nhóm xâu con giống nhau và thống kê số lần xuất hiện của chúng.",
+      "subtasks": [
+        {
+          "name": "Subtask 1",
+          "points": 20,
+          "description": "N <= 70."
+        },
+        {
+          "name": "Subtask 2",
+          "points": 20,
+          "description": "N <= 3000."
+        },
+        {
+          "name": "Subtask 3",
+          "points": 20,
+          "description": "K = 1."
+        },
+        {
+          "name": "Subtask 4",
+          "points": 40,
+          "description": "Không có giới hạn bổ sung."
+        }
+      ]
+    }
+  ]
+}
