@@ -1,0 +1,42 @@
+{
+  "title": "HSGQG Tin học — 27/10/2026 — Segment Tree và đếm đoạn tối ưu",
+  "durationMinutes": 120,
+  "problems": [
+    {
+      "id": "MAXSUBCNT",
+      "title": "Đếm đoạn tối ưu động",
+      "timeLimitMs": 4000,
+      "memoryLimitMb": 256,
+      "statement": "Cho dãy N số nguyên A1, A2, ..., AN. Bạn cần xử lý Q thao tác: (1) gán một phần tử; (2) trên đoạn [l,r], xét mọi đoạn con liên tiếp không rỗng [i,j] với l <= i <= j <= r. Gọi M là tổng lớn nhất của các đoạn con đó, C là số đoạn con có tổng đúng bằng M. Hai đoạn khác nhau nếu cặp chỉ số (i,j) khác nhau. Với mỗi truy vấn loại 2, hãy in M và C modulo 1000000007. Thao tác thực hiện theo thứ tự xuất hiện.",
+      "input": "Dòng 1: N Q. Dòng 2: N số nguyên A1..AN. Q dòng tiếp theo: '1 p x' để gán Ap=x, hoặc '2 l r' để truy vấn trên [l,r].",
+      "output": "Với mỗi truy vấn loại 2, in M và C mod 1000000007 trên một dòng, cách nhau bởi dấu cách.",
+      "constraints": "1 <= N,Q <= 200000; -10^9 <= Ai,x <= 10^9; 1 <= p <= N; 1 <= l <= r <= N. Luôn có ít nhất một truy vấn loại 2. Tổng M có thể âm và vượt 32-bit.",
+      "sampleInput": "7 7\n2 -2 2 0 -1 2 -2\n2 1 7\n1 4 -3\n2 1 7\n2 3 6\n1 2 0\n2 1 5\n2 5 7\n",
+      "sampleOutput": "3 2\n2 4\n2 2\n4 1\n2 1\n",
+      "explanation": "Trước cập nhật đầu tiên, trên [1,7] có M=3 với hai đoạn [1,6], [3,6]. Sau khi gán A4=-3, trên [1,7] có M=2 với bốn đoạn [1,1], [1,3], [3,3], [6,6].",
+      "hint": "Một đoạn truy vấn có thể ghép từ hai đoạn kề nhau. Hãy tìm các thông tin cần lưu cho mỗi đoạn để xác định tổng lớn nhất và số cách đạt được nó.",
+      "subtasks": [
+        {
+          "name": "Subtask 1",
+          "points": 15,
+          "description": "N,Q <= 200."
+        },
+        {
+          "name": "Subtask 2",
+          "points": 20,
+          "description": "Không có cập nhật; N,Q <= 5000."
+        },
+        {
+          "name": "Subtask 3",
+          "points": 25,
+          "description": "Tất cả Ai và mọi giá trị cập nhật x đều không âm."
+        },
+        {
+          "name": "Subtask 4",
+          "points": 40,
+          "description": "Không có giới hạn bổ sung."
+        }
+      ]
+    }
+  ]
+}
