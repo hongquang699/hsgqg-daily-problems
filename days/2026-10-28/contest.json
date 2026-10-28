@@ -1,0 +1,42 @@
+{
+  "title": "HSGQG Tin học — 28/10/2026 — Cầu trên hành trình",
+  "durationMinutes": 120,
+  "problems": [
+    {
+      "id": "BRIDGEPATH",
+      "title": "Cầu trên hành trình",
+      "timeLimitMs": 4000,
+      "memoryLimitMb": 256,
+      "statement": "Cho đồ thị vô hướng gồm N đỉnh và M cạnh, không nhất thiết liên thông. Các cạnh được phân biệt bằng chỉ số, có thể có nhiều cạnh song song giữa hai đỉnh, không có khuyên. Một cạnh là cầu nếu xóa cạnh đó làm tăng số thành phần liên thông. Có Q truy vấn (u,v). Với mỗi truy vấn, đếm số cạnh mà nếu xóa riêng cạnh đó thì u và v không còn liên thông. Nếu ban đầu u và v không liên thông, in -1. Khi u=v, đáp án là 0.",
+      "input": "Dòng 1: N M Q. M dòng tiếp theo: u v (cạnh vô hướng, u khác v). Q dòng cuối: u v (truy vấn).",
+      "output": "Với mỗi truy vấn, in một số nguyên trên một dòng: số cạnh mà việc xóa riêng cạnh đó làm u và v mất liên thông; hoặc -1 nếu ban đầu không liên thông.",
+      "constraints": "1 <= N <= 200000; 0 <= M <= 300000; 1 <= Q <= 200000; 1 <= u,v <= N; các cạnh không có khuyên, có thể có cạnh song song. Time limit 4 giây, memory limit 256 MB.",
+      "sampleInput": "8 9 7\n1 2\n2 3\n3 1\n3 4\n4 5\n5 6\n6 4\n6 7\n7 8\n1 2\n1 5\n2 7\n8 5\n1 8\n4 6\n3 3\n",
+      "sampleOutput": "0\n1\n2\n2\n3\n0\n0\n",
+      "explanation": "Các cạnh cầu trong ví dụ là (3,4), (6,7), (7,8). Truy vấn (1,8) có đáp án 3; (1,2) có đáp án 0.",
+      "hint": "Thử co các vùng mà hai đỉnh có thể đi tới nhau ngay cả khi xóa bất kỳ một cạnh đơn lẻ nào. Xét cấu trúc tạo thành từ những cạnh nối các vùng ấy.",
+      "subtasks": [
+        {
+          "name": "Subtask 1",
+          "points": 15,
+          "description": "N <= 15; M <= 30; Q <= 30."
+        },
+        {
+          "name": "Subtask 2",
+          "points": 20,
+          "description": "Đồ thị là một cây (M=N-1, liên thông)."
+        },
+        {
+          "name": "Subtask 3",
+          "points": 25,
+          "description": "N <= 5000; M <= 10000; Q <= 5000."
+        },
+        {
+          "name": "Subtask 4",
+          "points": 40,
+          "description": "Không có giới hạn bổ sung."
+        }
+      ]
+    }
+  ]
+}
