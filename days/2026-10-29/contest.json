@@ -1,0 +1,42 @@
+{
+  "title": "HSGQG Tin học — 29/10/2026 — Tổng đoạn thứ K",
+  "durationMinutes": 120,
+  "problems": [
+    {
+      "id": "KTHSUM",
+      "title": "Tổng đoạn thứ K",
+      "timeLimitMs": 7000,
+      "memoryLimitMb": 256,
+      "statement": "Cho dãy N số nguyên A1, A2, ..., AN (có thể âm) và ba số nguyên L, R, K. Xét mọi đoạn con liên tiếp không rỗng [l,r] có độ dài L <= r-l+1 <= R. Giá trị đoạn là tổng A_l+...+A_r. Sắp xếp tất cả các tổng đoạn hợp lệ theo thứ tự không giảm, những đoạn có cùng tổng vẫn tính riêng nếu cặp chỉ số khác nhau. Hãy tìm giá trị đứng thứ K (đánh số từ 1).",
+      "input": "Dòng đầu chứa bốn số nguyên N L R K. Dòng thứ hai chứa N số nguyên A1, A2, ..., AN.",
+      "output": "In ra một số nguyên duy nhất: tổng đoạn đứng thứ K. Kết quả có thể âm, cần dùng số nguyên 64-bit.",
+      "constraints": "1 <= N <= 100000; 1 <= L <= R <= N; -10^6 <= Ai <= 10^6; 1 <= K <= (R-L+1)*(2N-L-R+2)/2. Time limit 7 giây, memory limit 256 MB.",
+      "sampleInput": "8 2 4 10\n3 -2 4 -5 6 1 -3 2\n",
+      "sampleOutput": "2\n",
+      "explanation": "Có 18 đoạn hợp lệ. Đúng 9 đoạn có tổng không quá 1 và 11 đoạn có tổng không quá 2, nên tổng đứng thứ 10 là 2.",
+      "hint": "Biểu diễn tổng đoạn bằng hiệu hai tổng tiền tố. Với một ngưỡng X, thử đếm số đoạn có độ dài hợp lệ và tổng không vượt quá X.",
+      "subtasks": [
+        {
+          "name": "Subtask 1",
+          "points": 20,
+          "description": "N <= 70."
+        },
+        {
+          "name": "Subtask 2",
+          "points": 20,
+          "description": "N <= 3000."
+        },
+        {
+          "name": "Subtask 3",
+          "points": 20,
+          "description": "L = R."
+        },
+        {
+          "name": "Subtask 4",
+          "points": 40,
+          "description": "Không có giới hạn bổ sung."
+        }
+      ]
+    }
+  ]
+}
