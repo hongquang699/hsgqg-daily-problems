@@ -1,0 +1,42 @@
+{
+  "title": "HSGQG Tin học — 30/10/2026 — Cặp nguyên tố cùng nhau",
+  "durationMinutes": 120,
+  "problems": [
+    {
+      "id": "COPRIMEWINDOW",
+      "title": "Cặp nguyên tố cùng nhau",
+      "timeLimitMs": 4000,
+      "memoryLimitMb": 256,
+      "statement": "Cho dãy N số nguyên dương A1, A2, ..., AN và hai số nguyên L, R. Đếm số cặp chỉ số (i,j) thỏa mãn 1 <= i < j <= N, L <= j-i <= R và gcd(Ai,Aj)=1. Hai cặp có chỉ số khác nhau được tính riêng, kể cả khi giá trị Ai trùng nhau. Đáp án có thể vượt 32-bit.",
+      "input": "Dòng đầu gồm ba số nguyên N L R. Dòng thứ hai gồm N số nguyên dương A1, A2, ..., AN.",
+      "output": "In một số nguyên duy nhất là số cặp chỉ số hợp lệ (dùng số nguyên 64-bit).",
+      "constraints": "2 <= N <= 200000; 1 <= L <= R <= N-1; 1 <= Ai <= 1000000. Time limit 4 giây; memory limit 256 MB.",
+      "sampleInput": "10 2 4\n6 10 7 9 14 15 8 11 12 5\n",
+      "sampleOutput": "10\n",
+      "explanation": "Có đúng 10 cặp hợp lệ. Ví dụ (1,3) có khoảng cách 2 và gcd(6,7)=1; (4,8) có khoảng cách 4 và gcd(9,11)=1. Cặp (1,2) không hợp lệ vì khoảng cách nhỏ hơn L.",
+      "hint": "Khi cố định j, các i hợp lệ tạo thành một cửa sổ. Hãy nghĩ cách đếm nhanh các phần tử trong cửa sổ có ƯCLN với Aj bằng 1.",
+      "subtasks": [
+        {
+          "name": "Subtask 1",
+          "points": 15,
+          "description": "N <= 200."
+        },
+        {
+          "name": "Subtask 2",
+          "points": 20,
+          "description": "N <= 2500."
+        },
+        {
+          "name": "Subtask 3",
+          "points": 25,
+          "description": "Ai <= 30."
+        },
+        {
+          "name": "Subtask 4",
+          "points": 40,
+          "description": "Không có giới hạn bổ sung."
+        }
+      ]
+    }
+  ]
+}
