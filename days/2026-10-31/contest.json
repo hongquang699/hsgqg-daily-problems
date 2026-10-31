@@ -1,0 +1,42 @@
+{
+  "title": "HSGQG Tin học — 31/10/2026 — Phân đoạn giới hạn tải",
+  "durationMinutes": 120,
+  "problems": [
+    {
+      "id": "CAPSEG",
+      "title": "Phân đoạn giới hạn tải",
+      "timeLimitMs": 5000,
+      "memoryLimitMb": 256,
+      "statement": "Cho N tác vụ theo thứ tự, tác vụ i có tải không âm Ai. Chia toàn bộ dãy thành các lô liên tiếp không rỗng, mỗi lô chứa từ L đến R tác vụ; mỗi tác vụ thuộc đúng một lô. Được dùng tối đa K lô. Tải của một lô bằng tổng Ai trong lô. Hãy tối thiểu hóa tải lớn nhất trong các lô. Nếu không thể chia hợp lệ, in -1.",
+      "input": "Dòng đầu chứa N K L R. Dòng thứ hai chứa N số nguyên A1, A2, ..., AN.",
+      "output": "In một số nguyên duy nhất: giá trị nhỏ nhất của tải lớn nhất, hoặc -1 nếu không tồn tại phương án hợp lệ.",
+      "constraints": "1 <= N <= 200000; 1 <= K <= N; 1 <= L <= R <= N; 0 <= Ai <= 1000000000. C++17; time limit 5 giây; memory limit 256 MB. Kết quả có thể vượt 32-bit.",
+      "sampleInput": "9 3 2 4\n4 1 7 2 6 3 5 2 8\n",
+      "sampleOutput": "14\n",
+      "explanation": "Chia thành [1,4], [5,7], [8,9], có tải 14, 14, 10. Không thể đạt tải lớn nhất nhỏ hơn 14.",
+      "hint": "Với một ngưỡng tải X, hãy kiểm tra có thể chia thành tối đa K lô hay không. Xét các điểm cắt hợp lệ theo cả độ dài lẫn tổng tiền tố.",
+      "subtasks": [
+        {
+          "name": "Subtask 1",
+          "points": 20,
+          "description": "N <= 20."
+        },
+        {
+          "name": "Subtask 2",
+          "points": 20,
+          "description": "N <= 3000."
+        },
+        {
+          "name": "Subtask 3",
+          "points": 20,
+          "description": "L = R."
+        },
+        {
+          "name": "Subtask 4",
+          "points": 40,
+          "description": "Không có giới hạn bổ sung."
+        }
+      ]
+    }
+  ]
+}
