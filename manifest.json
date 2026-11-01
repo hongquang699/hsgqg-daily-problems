@@ -152,8 +152,8 @@
       "date": "2026-11-01",
       "contest": "days/2026-11-01/contest.json",
       "tests": "days/2026-11-01/tests.json",
-      "contestSha256": "30b9fbc08217c3de2c3041b642fab49ca8795080fbcff86cd7a6b0019d187fec",
-      "testsSha256": "37fcb0be895a78dccd1f9a2147d809fdd85f9be2fc3f3ef629d2d1d0b8553880"
+      "contestSha256": "08c7804e55f09892938d4314f8e637cbf3a50f4728cbe39d96e4b5c479641122",
+      "testsSha256": "7486bc526d017b53f4e3075661bd7eecce8575d0e1f5d10bca375f2ca0697f32"
     }
   ]
 }
