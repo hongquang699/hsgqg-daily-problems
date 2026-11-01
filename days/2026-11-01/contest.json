@@ -1,0 +1,42 @@
+{
+  "title": "HSGQG Tin học — 01/11/2026 — Đếm cách phân đoạn",
+  "durationMinutes": 120,
+  "problems": [
+    {
+      "id": "PARTCOUNT",
+      "title": "Đếm cách phân đoạn",
+      "timeLimitMs": 4000,
+      "memoryLimitMb": 256,
+      "statement": "Cho dãy N số nguyên A1, A2, ..., AN (có thể âm) và bốn số nguyên L, R, X, Y. Chia toàn bộ dãy thành các đoạn con liên tiếp không rỗng sao cho mỗi phần tử thuộc đúng một đoạn. Mỗi đoạn [l,r] phải có L <= r-l+1 <= R và X <= A_l+...+A_r <= Y. Hai cách chia khác nhau nếu tồn tại ít nhất một vị trí cắt khác nhau. Hãy đếm số cách chia hợp lệ modulo 1000000007. Nếu không có cách chia, in 0.",
+      "input": "Dòng đầu chứa N L R X Y. Dòng thứ hai chứa N số nguyên A1, A2, ..., AN.",
+      "output": "In một số nguyên duy nhất: số cách chia hợp lệ modulo 1000000007.",
+      "constraints": "1 <= N <= 200000; 1 <= L <= R <= N; -10^9 <= Ai <= 10^9; -2*10^14 <= X <= Y <= 2*10^14. C++17; time limit 4 giây; memory limit 256 MB.",
+      "sampleInput": "8 2 4 1 5\n3 -1 2 1 -2 4 1 -1\n",
+      "sampleOutput": "3\n",
+      "explanation": "Ba cách chia: [1,2] | [3,4] | [5,8]; [1,2] | [3,5] | [6,8]; [1,4] | [5,8].",
+      "hint": "Xét số cách chia từng tiền tố. Khi cố định điểm kết thúc, các điểm cắt hợp lệ nằm trong một khoảng chỉ số; tổng đoạn có thể biểu diễn bằng hiệu hai tổng tiền tố.",
+      "subtasks": [
+        {
+          "name": "Subtask 1",
+          "points": 15,
+          "description": "N <= 20."
+        },
+        {
+          "name": "Subtask 2",
+          "points": 25,
+          "description": "N <= 3000."
+        },
+        {
+          "name": "Subtask 3",
+          "points": 20,
+          "description": "Ai >= 0 và L = 1."
+        },
+        {
+          "name": "Subtask 4",
+          "points": 40,
+          "description": "Không có giới hạn bổ sung."
+        }
+      ]
+    }
+  ]
+}
