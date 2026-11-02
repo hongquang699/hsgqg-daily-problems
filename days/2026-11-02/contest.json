@@ -1,0 +1,42 @@
+{
+  "title": "HSGQG Tin học — 02/11/2026 — Mạng kết nối tạm thời",
+  "durationMinutes": 120,
+  "problems": [
+    {
+      "id": "TEMPGRAPH",
+      "title": "Mạng kết nối tạm thời",
+      "timeLimitMs": 5000,
+      "memoryLimitMb": 256,
+      "statement": "Cho N máy tính đánh số từ 1 đến N, ban đầu không có đường truyền. Xử lý Q thao tác: 1 u v: thêm đường truyền vô hướng giữa u và v; 2 u v: xóa đường truyền đang tồn tại giữa u và v; 3 u v: hỏi liệu u và v có liên thông qua các đường truyền đang hoạt động hay không. Mỗi cặp đỉnh có nhiều nhất một cạnh tại một thời điểm; thao tác thêm luôn thêm cạnh chưa có, thao tác xóa luôn xóa cạnh đang có; không thêm/xóa khuyên. Truy vấn cho phép u=v. Với mỗi thao tác loại 3, in YES hoặc NO theo thứ tự xuất hiện.",
+      "input": "Dòng đầu chứa N Q. Q dòng tiếp theo, mỗi dòng chứa ba số nguyên t u v mô tả một thao tác.",
+      "output": "Với mỗi truy vấn loại 3, in YES nếu hai đỉnh liên thông, ngược lại in NO; mỗi đáp án một dòng.",
+      "constraints": "1 <= N,Q <= 200000; 1 <= u,v <= N; t thuộc {1,2,3}; ít nhất một truy vấn loại 3. C++17; time limit 5 giây; memory limit 256 MB.",
+      "sampleInput": "6 14\n3 1 4\n1 1 2\n1 2 3\n3 1 3\n1 3 4\n3 1 4\n2 2 3\n3 1 4\n1 2 4\n3 1 4\n1 5 6\n3 5 4\n2 1 2\n3 1 4\n",
+      "sampleOutput": "NO\nYES\nYES\nNO\nYES\nNO\nNO\n",
+      "explanation": "Ban đầu 1 và 4 chưa liên thông. Sau khi thêm (1,2), (2,3), (3,4), chúng liên thông. Xóa (2,3) làm mất kết nối, thêm (2,4) khôi phục, và xóa (1,2) lại tách đỉnh 1 khỏi đỉnh 4.",
+      "hint": "Mỗi cạnh hoạt động trên những khoảng thời gian nhất định. Hãy nghĩ cách biểu diễn các khoảng thời gian đó thay vì dựng lại đồ thị cho mỗi truy vấn.",
+      "subtasks": [
+        {
+          "name": "Subtask 1",
+          "points": 15,
+          "description": "N <= 20; Q <= 60."
+        },
+        {
+          "name": "Subtask 2",
+          "points": 20,
+          "description": "Không có thao tác loại 2."
+        },
+        {
+          "name": "Subtask 3",
+          "points": 25,
+          "description": "N <= 2000; Q <= 12000."
+        },
+        {
+          "name": "Subtask 4",
+          "points": 40,
+          "description": "Không có giới hạn bổ sung."
+        }
+      ]
+    }
+  ]
+}
