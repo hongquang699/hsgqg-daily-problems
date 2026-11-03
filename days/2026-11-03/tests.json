@@ -1,0 +1,165 @@
+{
+  "problemId": "REPEATK",
+  "tests": [
+    {
+      "name": "test01",
+      "input": "8 3\nabababab\n",
+      "output": "4\n"
+    },
+    {
+      "name": "test02",
+      "input": "6 3\naaaaaa\n",
+      "output": "4\n"
+    },
+    {
+      "name": "test03",
+      "input": "6 2\nabcdef\n",
+      "output": "0\n"
+    },
+    {
+      "name": "test04",
+      "input": "9 3\nabcabcabc\n",
+      "output": "3\n"
+    },
+    {
+      "name": "test05",
+      "input": "1 1\na\n",
+      "output": "1\n"
+    },
+    {
+      "name": "test06",
+      "input": "2 2\nab\n",
+      "output": "0\n"
+    },
+    {
+      "name": "test07",
+      "input": "4 4\nzzzz\n",
+      "output": "1\n"
+    },
+    {
+      "name": "test08",
+      "input": "6 2\nbanana\n",
+      "output": "3\n"
+    },
+    {
+      "name": "test09",
+      "input": "11 2\nmississippi\n",
+      "output": "4\n"
+    },
+    {
+      "name": "test10",
+      "input": "5 1\nabcde\n",
+      "output": "5\n"
+    },
+    {
+      "name": "test11",
+      "input": "7 3\nabababa\n",
+      "output": "3\n"
+    },
+    {
+      "name": "test12",
+      "input": "10 2\naabbbaaabb\n",
+      "output": "4\n"
+    },
+    {
+      "name": "test13",
+      "input": "8 2\nxyzxyzxy\n",
+      "output": "5\n"
+    },
+    {
+      "name": "test14",
+      "input": "100 99\naaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\n",
+      "output": "2\n"
+    },
+    {
+      "name": "test15",
+      "input": "150 20\nabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabc\n",
+      "output": "93\n"
+    },
+    {
+      "name": "test16",
+      "input": "104 4\nabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz\n",
+      "output": "26\n"
+    },
+    {
+      "name": "test17",
+      "input": "300 300\naaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\n",
+      "output": "1\n"
+    },
+    {
+      "name": "test18",
+      "input": "300 100\nabababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababab\n",
+      "output": "102\n"
+    },
+    {
+      "name": "test19",
+      "input": "600 10\nabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcde\n",
+      "output": "555\n"
+    },
+    {
+      "name": "test20",
+      "input": "2000 1\naaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\n",
+      "output": "2000\n"
+    },
+    {
+      "name": "test21",
+      "input": "61 24\nedeedeabcdddddbeceebdbecbecdeccccdabecaebdceeaeeceaeedccdcdee\n",
+      "output": "0\n"
+    },
+    {
+      "name": "test22",
+      "input": "18 5\ncbabbbbeeaceadcace\n",
+      "output": "1\n"
+    },
+    {
+      "name": "test23",
+      "input": "48 7\nddeaecddebacdcbdeacbeededdeecbdcbbebccadbcbcdacc\n",
+      "output": "1\n"
+    },
+    {
+      "name": "test24",
+      "input": "60 5\nbecdeebcddaedddcaebdedadecbdbdccacdabcbcbbbadcdddebdacdabcae\n",
+      "output": "2\n"
+    },
+    {
+      "name": "test25",
+      "input": "34 27\ndcaabaabcebdabddacddecdbaaedaeeace\n",
+      "output": "0\n"
+    },
+    {
+      "name": "test26",
+      "input": "29 8\nbaeeadcebdeacadbbbddeecccdeae\n",
+      "output": "1\n"
+    },
+    {
+      "name": "test27",
+      "input": "35 33\ncdeacedcddbeeacadeebdeecdaeabaabadd\n",
+      "output": "0\n"
+    },
+    {
+      "name": "test28",
+      "input": "34 27\nddbeaacebdbdadacebceccadbacbeaebac\n",
+      "output": "0\n"
+    },
+    {
+      "name": "test29",
+      "input": "34 17\ncaeecdeceabceccaeedecadddbdecaddaa\n",
+      "output": "0\n"
+    },
+    {
+      "name": "test30",
+      "input": "48 39\nbecddadccdeededdbbbdcebdadabdbdaddcedcbcacbcceca\n",
+      "output": "0\n"
+    },
+    {
+      "name": "test31",
+      "input": "58 49\nbeedebbebeeeededaeceaaadeeabbbbdceeabaeeadbeacdeaebeddcbad\n",
+      "output": "0\n"
+    },
+    {
+      "name": "test32",
+      "input": "47 22\ncbbcadbededeaaedceaaeabebbcaabcedecdcdeacaddcbc\n",
+      "output": "0\n"
+    }
+  ]
+}
