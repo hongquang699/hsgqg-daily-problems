@@ -1,0 +1,42 @@
+{
+  "title": "HSGQG Tin học — 03/11/2026 — Xâu con lặp K lần",
+  "durationMinutes": 120,
+  "problems": [
+    {
+      "id": "REPEATK",
+      "title": "Xâu con lặp K lần",
+      "timeLimitMs": 3000,
+      "memoryLimitMb": 256,
+      "statement": "Cho xâu S gồm N chữ cái tiếng Anh thường và số nguyên K. Một xâu T xuất hiện tại vị trí i nếu T trùng một đoạn ký tự liên tiếp bắt đầu tại i. Các lần xuất hiện được phép chồng lấn. Tìm độ dài lớn nhất của một xâu T không rỗng xuất hiện ít nhất K lần trong S. Nếu không tồn tại, in 0.",
+      "input": "Dòng đầu chứa N K. Dòng tiếp theo chứa xâu S gồm đúng N chữ cái thường.",
+      "output": "In độ dài lớn nhất của một xâu con xuất hiện ít nhất K lần, hoặc 0.",
+      "constraints": "1 <= N <= 200000; 1 <= K <= N. C++17; time limit 3 giây; memory limit 256 MB.",
+      "sampleInput": "8 3\nabababab\n",
+      "sampleOutput": "4\n",
+      "explanation": "Xâu abab xuất hiện tại các vị trí 1, 3, 5. Không có xâu độ dài 5 xuất hiện ít nhất 3 lần.",
+      "hint": "Nếu một xâu xuất hiện nhiều lần thì mọi tiền tố của nó cũng xuất hiện ít nhất từng ấy lần. Hãy tận dụng tính chất này.",
+      "subtasks": [
+        {
+          "name": "Subtask 1",
+          "points": 15,
+          "description": "N <= 100."
+        },
+        {
+          "name": "Subtask 2",
+          "points": 20,
+          "description": "N <= 3000."
+        },
+        {
+          "name": "Subtask 3",
+          "points": 25,
+          "description": "K = 1 hoặc K = N."
+        },
+        {
+          "name": "Subtask 4",
+          "points": 40,
+          "description": "Không có giới hạn bổ sung."
+        }
+      ]
+    }
+  ]
+}
