@@ -1,0 +1,41 @@
+{
+  "title": "HSGQG Tin học — 05/11/2026 — Đoạn tổng đích",
+  "durationMinutes": 120,
+  "problems": [
+    {
+      "id": "TARGETSEG",
+      "title": "Đoạn tổng đích",
+      "timeLimitMs": 3000,
+      "memoryLimitMb": 256,
+      "statement": "Cho N số nguyên A_i (có thể âm), L, R và K. Đếm số đoạn [l,r] có L <= r-l+1 <= R và tổng A_l+...+A_r = K. Các cặp chỉ số khác nhau được tính riêng.",
+      "input": "Dòng 1: N L R K. Dòng 2: N số nguyên A_i.",
+      "output": "Một số nguyên là số đoạn hợp lệ.",
+      "constraints": "1 <= N <= 200000; 1 <= L <= R <= N; -10^9 <= A_i <= 10^9; -2*10^14 <= K <= 2*10^14.",
+      "samples": [
+        {
+          "input": "7 2 4 3\n1 2 -1 3 0 1 2\n",
+          "output": "5\n"
+        }
+      ],
+      "subtasks": [
+        {
+          "score": 20,
+          "constraints": "N <= 200"
+        },
+        {
+          "score": 20,
+          "constraints": "N <= 3000"
+        },
+        {
+          "score": 20,
+          "constraints": "A_i >= 0"
+        },
+        {
+          "score": 40,
+          "constraints": "Full constraints"
+        }
+      ],
+      "hint": "Dùng hiệu tổng tiền tố và xét cửa sổ vị trí bắt đầu hợp lệ."
+    }
+  ]
+}
