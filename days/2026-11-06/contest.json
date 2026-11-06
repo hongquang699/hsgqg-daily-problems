@@ -1,0 +1,37 @@
+{
+  "title": "HSGQG Tin học — 06/11/2026 — Ước chung của đoạn",
+  "durationMinutes": 120,
+  "problems": [
+    {
+      "id": "GCDRANGE",
+      "title": "Ước chung của đoạn",
+      "timeLimitMs": 3000,
+      "memoryLimitMb": 256,
+      "statement": "Cho N số nguyên dương A_i và L,R,G. Đếm số đoạn [l,r] có L <= r-l+1 <= R và gcd(A_l,...,A_r) = G.",
+      "input": "Dòng 1: N L R G. Dòng 2: N số nguyên dương A_i.",
+      "output": "Số đoạn hợp lệ.",
+      "constraints": "1 <= N <= 200000; 1 <= L <= R <= N; 1 <= A_i,G <= 1000000.",
+      "sampleInput": "7 2 4 2\n6 10 4 9 8 12 2\n",
+      "sampleOutput": "5\n",
+      "subtasks": [
+        {
+          "score": 15,
+          "constraints": "N <= 200"
+        },
+        {
+          "score": 20,
+          "constraints": "N <= 3000"
+        },
+        {
+          "score": 25,
+          "constraints": "L = R"
+        },
+        {
+          "score": 40,
+          "constraints": "Full"
+        }
+      ],
+      "hint": "Nhóm các vị trí bắt đầu có cùng gcd khi cố định điểm kết thúc."
+    }
+  ]
+}
