@@ -1,0 +1,42 @@
+{
+  "title": "HSGQG Tin học — 07/11/2026 — Khoảng cách thứ K",
+  "durationMinutes": 120,
+  "problems": [
+    {
+      "id": "KTHDIFF",
+      "title": "Khoảng cách thứ K",
+      "timeLimitMs": 3000,
+      "memoryLimitMb": 256,
+      "statement": "Cho dãy gồm N số nguyên A1, A2, ..., AN. Với mỗi cặp chỉ số (i,j), 1 <= i < j <= N, định nghĩa khoảng cách D(i,j)=|Ai-Aj|. Lập danh sách khoảng cách của tất cả các cặp và sắp xếp không giảm; các cặp chỉ số khác nhau được tính riêng kể cả khi khoảng cách bằng nhau. Hãy tìm khoảng cách đứng thứ K.",
+      "input": "Dòng đầu chứa hai số nguyên N và K. Dòng thứ hai chứa N số nguyên A1, A2, ..., AN.",
+      "output": "In ra một số nguyên duy nhất: khoảng cách đứng thứ K trong danh sách đã sắp xếp.",
+      "constraints": "2 <= N <= 200000; 1 <= K <= N*(N-1)/2; -1000000000 <= Ai <= 1000000000.",
+      "sampleInput": "5 4\n1 3 4 8 13\n",
+      "sampleOutput": "4\n",
+      "explanation": "Các khoảng cách của 10 cặp sau khi sắp xếp là 1, 2, 3, 4, 5, 5, 7, 9, 10, 12. Khoảng cách đứng thứ 4 bằng 4.",
+      "hint": "Thử cố định một ngưỡng X và đếm số cặp có khoảng cách không vượt quá X. Sau khi sắp xếp dãy, khi đầu phải dịch sang phải thì đầu trái nhỏ nhất hợp lệ chỉ có thể dịch theo một chiều. Khai thác tính đơn điệu này.",
+      "subtasks": [
+        {
+          "name": "Subtask 1",
+          "points": 15,
+          "description": "N <= 100."
+        },
+        {
+          "name": "Subtask 2",
+          "points": 25,
+          "description": "N <= 5000."
+        },
+        {
+          "name": "Subtask 3",
+          "points": 20,
+          "description": "K = 1."
+        },
+        {
+          "name": "Subtask 4",
+          "points": 40,
+          "description": "Không có giới hạn bổ sung."
+        }
+      ]
+    }
+  ]
+}
