@@ -1,0 +1,42 @@
+{
+  "title": "HSGQG Tin học — 08/11/2026 — Bình phương tổng đoạn",
+  "durationMinutes": 120,
+  "problems": [
+    {
+      "id": "SQUAREPART",
+      "title": "Bình phương tổng đoạn",
+      "timeLimitMs": 4000,
+      "memoryLimitMb": 256,
+      "statement": "Cho dãy N số nguyên không âm A1, A2, ..., AN. Hãy chia toàn bộ dãy thành đúng K đoạn con liên tiếp, không rỗng, sao cho mỗi phần tử thuộc đúng một đoạn. Chi phí của một đoạn [l,r] bằng bình phương tổng các phần tử trong đoạn đó: (A_l + A_{l+1} + ... + A_r)^2. Chi phí của cách chia bằng tổng chi phí của K đoạn. Hãy tìm chi phí nhỏ nhất có thể.",
+      "input": "Dòng đầu chứa hai số nguyên N và K. Dòng thứ hai chứa N số nguyên không âm A1, A2, ..., AN.",
+      "output": "In một số nguyên duy nhất: chi phí nhỏ nhất của cách chia thành đúng K đoạn.",
+      "constraints": "1 <= N <= 200000; 1 <= K <= min(N,20); 0 <= Ai <= 10000. Đáp án không vượt quá 4*10^18 và được bảo đảm biểu diễn được bằng số nguyên 64-bit có dấu.",
+      "sampleInput": "7 3\n1 2 3 4 5 6 7\n",
+      "sampleOutput": "270\n",
+      "explanation": "Một cách chia đạt chi phí 270 là [1,4], [5,6], [7,7], có tổng các đoạn lần lượt là 10, 11, 7. Chi phí bằng 10^2 + 11^2 + 7^2 = 270; không có cách chia hợp lệ nào có chi phí nhỏ hơn.",
+      "hint": "Hãy xét trạng thái theo số đoạn đã dùng và độ dài tiền tố đã chia. Khi cố định điểm kết thúc i, thử biến đổi bình phương (P[i]-P[j])^2 để tách phần chỉ phụ thuộc i khỏi phần phụ thuộc điểm cắt j. Tính không âm của Ai tạo ra một tính đơn điệu hữu ích.",
+      "subtasks": [
+        {
+          "name": "Subtask 1",
+          "points": 15,
+          "description": "N <= 20."
+        },
+        {
+          "name": "Subtask 2",
+          "points": 20,
+          "description": "N <= 500."
+        },
+        {
+          "name": "Subtask 3",
+          "points": 25,
+          "description": "K <= 2."
+        },
+        {
+          "name": "Subtask 4",
+          "points": 40,
+          "description": "Không có giới hạn bổ sung."
+        }
+      ]
+    }
+  ]
+}
