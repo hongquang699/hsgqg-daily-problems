@@ -1,0 +1,42 @@
+{
+  "title": "HSGQG Tin học — 09/11/2026 — Cạnh cầu và cặp đỉnh",
+  "durationMinutes": 120,
+  "problems": [
+    {
+      "id": "BRIDGEP",
+      "title": "Cạnh cầu và cặp đỉnh",
+      "timeLimitMs": 3000,
+      "memoryLimitMb": 256,
+      "statement": "Cho đồ thị vô hướng đơn, liên thông G gồm N đỉnh và M cạnh. Với mỗi cạnh e, gọi P_e là số cặp đỉnh không thứ tự {u,v}, u khác v, sao cho u và v liên thông trong G nhưng không còn liên thông sau khi xóa cạnh e. Một cặp đỉnh có thể được tính cho nhiều cạnh khác nhau nếu việc xóa từng cạnh đó đều làm cặp đỉnh mất liên thông. Hãy tính tổng P_1 + P_2 + ... + P_M.",
+      "input": "Dòng đầu chứa hai số nguyên N, M. M dòng tiếp theo, dòng thứ i chứa hai số nguyên u_i, v_i mô tả cạnh thứ i.",
+      "output": "In ra một số nguyên duy nhất: tổng P_1 + P_2 + ... + P_M.",
+      "constraints": "2 <= N <= 200000; N-1 <= M <= min(200000, N(N-1)/2). Đồ thị là đơn, vô hướng và liên thông. Đáp án được bảo đảm nằm trong kiểu số nguyên 64-bit có dấu.",
+      "sampleInput": "6 7\n1 2\n2 3\n3 1\n3 4\n4 5\n5 6\n6 4\n",
+      "sampleOutput": "9\n",
+      "explanation": "Chỉ cạnh (3,4) khi bị xóa sẽ tách đồ thị thành {1,2,3} và {4,5,6}. Có 3*3 = 9 cặp đỉnh bị mất liên thông.",
+      "hint": "Trong DFS, phân biệt cạnh cây và cạnh ngược. Với mỗi cây con, cần biết thời điểm thăm nhỏ nhất có thể quay về; đồng thời lưu số đỉnh của cây con.",
+      "subtasks": [
+        {
+          "name": "Subtask 1",
+          "points": 15,
+          "description": "N <= 20; M <= 40."
+        },
+        {
+          "name": "Subtask 2",
+          "points": 20,
+          "description": "Đồ thị là cây."
+        },
+        {
+          "name": "Subtask 3",
+          "points": 25,
+          "description": "M = N."
+        },
+        {
+          "name": "Subtask 4",
+          "points": 40,
+          "description": "Không có giới hạn bổ sung."
+        }
+      ]
+    }
+  ]
+}
