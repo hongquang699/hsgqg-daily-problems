@@ -1,0 +1,42 @@
+{
+  "title": "HSGQG Tin học — 10/11/2026 — Đếm lần xuất hiện của nhiều mẫu",
+  "durationMinutes": 120,
+  "problems": [
+    {
+      "id": "ACOUNT",
+      "title": "Đếm lần xuất hiện của nhiều mẫu",
+      "timeLimitMs": 4000,
+      "memoryLimitMb": 256,
+      "statement": "Cho xâu văn bản S chỉ gồm các chữ cái Latin thường. Có Q mẫu xâu P1, P2, ..., PQ, mỗi mẫu cũng chỉ gồm các chữ cái Latin thường. Với mỗi mẫu Pi, hãy đếm số vị trí bắt đầu mà tại đó Pi xuất hiện như một xâu con liên tiếp của S. Các lần xuất hiện được phép chồng lấn. Các mẫu trùng nhau vẫn được hỏi riêng và phải cho cùng kết quả.",
+      "input": "Dòng đầu chứa xâu S. Dòng thứ hai chứa số nguyên Q. Q dòng tiếp theo, dòng thứ i chứa mẫu Pi.",
+      "output": "Gồm Q dòng. Dòng thứ i chứa số lần xuất hiện của Pi trong S.",
+      "constraints": "1 <= |S| <= 200000; 1 <= Q <= 200000; 1 <= tổng |Pi| <= 200000. S và mọi Pi chỉ gồm các chữ cái Latin thường a-z.",
+      "sampleInput": "ababa\n4\naba\nba\na\nababa\n",
+      "sampleOutput": "2\n2\n3\n1\n",
+      "explanation": "Mẫu aba xuất hiện ở các vị trí bắt đầu 1 và 3; ba xuất hiện ở vị trí 2 và 4; a xuất hiện 3 lần; cả xâu ababa xuất hiện đúng 1 lần. Các lần xuất hiện chồng lấn được tính riêng.",
+      "hint": "Khi đọc văn bản, trạng thái hiện tại có thể đại diện cho hậu tố dài nhất của phần đã đọc cũng là tiền tố của ít nhất một mẫu. Sau khi quét xong, hãy tận dụng quan hệ liên kết thất bại giữa các trạng thái để tổng hợp số lần.",
+      "subtasks": [
+        {
+          "name": "Subtask 1",
+          "points": 15,
+          "description": "|S| <= 200; Q <= 200; tổng |Pi| <= 2000."
+        },
+        {
+          "name": "Subtask 2",
+          "points": 20,
+          "description": "Q = 1; không có giới hạn bổ sung."
+        },
+        {
+          "name": "Subtask 3",
+          "points": 25,
+          "description": "|S| <= 5000; tổng |Pi| <= 5000."
+        },
+        {
+          "name": "Subtask 4",
+          "points": 40,
+          "description": "Không có giới hạn bổ sung."
+        }
+      ]
+    }
+  ]
+}
