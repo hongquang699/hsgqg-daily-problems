@@ -1,0 +1,42 @@
+{
+  "title": "HSGQG Tin học — 11/11/2026 — Quản lý dãy số",
+  "durationMinutes": 120,
+  "problems": [
+    {
+      "id": "SEGOPS",
+      "title": "Quản lý dãy số",
+      "timeLimitMs": 4000,
+      "memoryLimitMb": 256,
+      "statement": "Cho dãy N số nguyên không âm A1, A2, ..., AN. Cần xử lý Q thao tác theo thứ tự: (1) 1 l r x: gán Ai = x với mọi l <= i <= r; (2) 2 l r x: cộng x vào mọi Ai với l <= i <= r; (3) 3 l r: in tổng A[l..r]; (4) 4 k: in chỉ số nhỏ nhất p sao cho A1 + ... + Ap >= k, nếu không tồn tại thì in -1. Mọi phần tử luôn không âm. Ở thao tác loại 4, k là số nguyên dương.",
+      "input": "Dòng đầu chứa N, Q. Dòng thứ hai chứa N số Ai. Q dòng tiếp theo, mỗi dòng mô tả một thao tác theo một trong bốn dạng: 1 l r x; 2 l r x; 3 l r; 4 k.",
+      "output": "Với mỗi thao tác loại 3 hoặc loại 4, in kết quả trên một dòng theo đúng thứ tự xuất hiện.",
+      "constraints": "1 <= N,Q <= 200000; 0 <= Ai ban đầu <= 10^9; 0 <= x <= 10^9 ở thao tác loại 1; 0 <= x <= 10^6 ở thao tác loại 2; 1 <= k <= 10^18 ở thao tác loại 4; 1 <= l <= r <= N. Mọi phần tử luôn không âm. Tổng toàn dãy sau mọi thao tác được bảo đảm không vượt quá 5*10^16.",
+      "sampleInput": "5 8\n2 0 3 1 4\n4 4\n3 2 4\n2 2 3 2\n4 7\n1 3 5 1\n3 1 5\n4 8\n4 5\n",
+      "sampleOutput": "3\n4\n3\n7\n-1\n3\n",
+      "explanation": "Ban đầu tổng tiền tố lần lượt là 2, 2, 5, 6, 10 nên truy vấn loại 4 với k=4 trả về 3. Sau khi cộng 2 vào đoạn [2,3], dãy trở thành [2,2,5,1,4]. Sau đó gán đoạn [3,5] bằng 1, dãy trở thành [2,2,1,1,1], có tổng bằng 7. Vì vậy truy vấn k=8 trả về -1 và truy vấn k=5 trả về 3.",
+      "hint": "Một nút cần lưu tổng trên đoạn và thông tin cập nhật đang chờ đẩy xuống các nút con. Hãy xác định thứ tự kết hợp hai phép cập nhật gán và cộng. Với thao tác loại 4, tính không âm của các phần tử bảo đảm tổng tiền tố không giảm.",
+      "subtasks": [
+        {
+          "name": "Subtask 1",
+          "points": 15,
+          "description": "N,Q <= 200."
+        },
+        {
+          "name": "Subtask 2",
+          "points": 20,
+          "description": "Chỉ có thao tác loại 3 và loại 4."
+        },
+        {
+          "name": "Subtask 3",
+          "points": 25,
+          "description": "Không có thao tác loại 4."
+        },
+        {
+          "name": "Subtask 4",
+          "points": 40,
+          "description": "Không có giới hạn bổ sung."
+        }
+      ]
+    }
+  ]
+}
