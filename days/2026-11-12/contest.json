@@ -1,0 +1,42 @@
+{
+  "title": "HSGQG Tin học — 12/11/2026 — Đoạn con giới hạn",
+  "durationMinutes": 120,
+  "problems": [
+    {
+      "id": "RANGESEG",
+      "title": "Đoạn con giới hạn",
+      "timeLimitMs": 3000,
+      "memoryLimitMb": 256,
+      "statement": "Cho dãy số nguyên A1, A2, ..., AN và bốn số nguyên K, H, L, R. Một đoạn con [l,r] hợp lệ nếu K <= r-l+1 <= H và L <= A_l + A_(l+1) + ... + A_r <= R. Các phần tử có thể âm, dương hoặc bằng 0. Hai đoạn khác nhau nếu có cặp đầu mút khác nhau. Hãy đếm số đoạn con hợp lệ.",
+      "input": "Dòng đầu chứa năm số nguyên N, K, H, L, R. Dòng thứ hai chứa N số nguyên A1, A2, ..., AN.",
+      "output": "In một số nguyên duy nhất: số đoạn con hợp lệ.",
+      "constraints": "1 <= N <= 200000; 1 <= K <= H <= N; -10^9 <= Ai <= 10^9; -10^18 <= L <= R <= 10^18. Đáp án không vượt quá N*(N+1)/2.",
+      "sampleInput": "7 2 4 3 6\n1 -2 3 1 2 -1 2\n",
+      "sampleOutput": "8\n",
+      "explanation": "Có 8 đoạn con thỏa mãn đồng thời điều kiện độ dài từ 2 đến 4 và điều kiện tổng từ 3 đến 6, tính cả hai đầu mút.",
+      "hint": "Đặt P0 = 0 và Pi là tổng i phần tử đầu tiên. Với một đầu phải cố định, các chỉ số đầu trái hợp lệ nằm trong một cửa sổ chỉ số trượt; những giá trị tổng tiền tố cần đếm thuộc một đoạn số.",
+      "subtasks": [
+        {
+          "name": "Subtask 1",
+          "points": 15,
+          "description": "N <= 2000."
+        },
+        {
+          "name": "Subtask 2",
+          "points": 20,
+          "description": "Ai >= 0 với mọi i."
+        },
+        {
+          "name": "Subtask 3",
+          "points": 25,
+          "description": "K = H."
+        },
+        {
+          "name": "Subtask 4",
+          "points": 40,
+          "description": "Không có giới hạn bổ sung."
+        }
+      ]
+    }
+  ]
+}
