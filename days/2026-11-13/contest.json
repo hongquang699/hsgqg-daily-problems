@@ -1,0 +1,42 @@
+{
+  "title": "HSGQG Tin học — 13/11/2026 — Tổng GCD của các đoạn con",
+  "durationMinutes": 120,
+  "problems": [
+    {
+      "id": "GCDSUM",
+      "title": "Tổng GCD của các đoạn con",
+      "timeLimitMs": 4000,
+      "memoryLimitMb": 256,
+      "statement": "Cho dãy gồm N số nguyên dương A1, A2, ..., AN. Với mỗi đoạn con không rỗng [l,r], gọi gcd(l,r) là ước chung lớn nhất của các phần tử A_l, A_(l+1), ..., A_r. Hãy tính tổng gcd(l,r) trên tất cả các đoạn con không rỗng của dãy.",
+      "input": "Dòng đầu chứa số nguyên N. Dòng thứ hai chứa N số nguyên dương A1, A2, ..., AN.",
+      "output": "In ra một số nguyên duy nhất: tổng các ước chung lớn nhất của tất cả các đoạn con không rỗng.",
+      "constraints": "1 <= N <= 200000; 1 <= Ai <= 1000000. Đáp án không vượt quá 1000000*N*(N+1)/2 và nằm trong kiểu số nguyên 64-bit có dấu.",
+      "sampleInput": "3\n6 10 15\n",
+      "sampleOutput": "39\n",
+      "explanation": "Các đoạn con lần lượt có GCD: 6, 2, 1, 10, 5, 15. Tổng bằng 39.",
+      "hint": "Cố định đầu phải của đoạn con. Khi đầu trái dịch dần về bên trái, GCD chỉ có thể nhận một số lượng nhỏ giá trị phân biệt. Hãy nhóm các đầu trái tạo ra cùng một GCD và lưu số lượng của mỗi nhóm.",
+      "subtasks": [
+        {
+          "name": "Subtask 1",
+          "points": 15,
+          "description": "N <= 200."
+        },
+        {
+          "name": "Subtask 2",
+          "points": 20,
+          "description": "N <= 5000."
+        },
+        {
+          "name": "Subtask 3",
+          "points": 25,
+          "description": "A1 = A2 = ... = AN; không giới hạn bổ sung về N."
+        },
+        {
+          "name": "Subtask 4",
+          "points": 40,
+          "description": "Không có giới hạn bổ sung."
+        }
+      ]
+    }
+  ]
+}
