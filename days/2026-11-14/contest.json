@@ -1,0 +1,42 @@
+{
+  "title": "HSGQG Tin học — 14/11/2026 — Tối ưu hóa nhóm",
+  "durationMinutes": 120,
+  "problems": [
+    {
+      "id": "DAYPART",
+      "title": "Tối ưu hóa nhóm",
+      "timeLimitMs": 4000,
+      "memoryLimitMb": 256,
+      "statement": "Một dây chuyền có N công việc được sắp theo thứ tự cố định. Công việc thứ i cần A_i đơn vị thời gian. Dây chuyền được chia thành các nhóm liên tiếp; mỗi nhóm được xử lý trong một ngày. Mỗi ngày phải xử lý ít nhất L và nhiều nhất R công việc liên tiếp. Dây chuyền được phép sử dụng không quá K ngày. Hãy tìm giá trị X nhỏ nhất sao cho có thể chia toàn bộ N công việc thành không quá K nhóm liên tiếp, mỗi nhóm có từ L đến R công việc và tổng thời gian của mỗi nhóm không vượt quá X.",
+      "input": "Dòng đầu chứa bốn số nguyên N, K, L, R. Dòng thứ hai chứa N số nguyên dương A_1, A_2, ..., A_N.",
+      "output": "In ra một số nguyên duy nhất là giá trị X nhỏ nhất.",
+      "constraints": "1 <= N <= 200000; 1 <= K <= N; 1 <= L <= R <= N; 1 <= A_i <= 10^9; sum(A_i) <= 2*10^14. Dữ liệu bảo đảm ceil(N/R) <= min(K, floor(N/L)).",
+      "sampleInput": "7 3 2 3\n4 2 3 5 1 2 4\n",
+      "sampleOutput": "8\n",
+      "explanation": "Có thể chia thành ba nhóm [4,2], [3,5] và [1,2,4]. Tổng thời gian tương ứng là 6, 8 và 7, nên giá trị lớn nhất là 8. Không có cách chia hợp lệ nào đạt giá trị lớn nhất nhỏ hơn 8.",
+      "hint": "Thử cố định một giới hạn X cho tổng thời gian mỗi ngày. Gọi dp[i] là số ngày ít nhất để xử lý i công việc đầu tiên. Một vị trí cắt trước i chỉ hợp lệ nếu độ dài nhóm cuối thuộc [L,R] và tổng nhóm đó không vượt quá X. Hãy tận dụng việc A_i dương để xác định biên trái của các vị trí cắt.",
+      "subtasks": [
+        {
+          "name": "Subtask 1",
+          "points": 15,
+          "description": "N <= 300."
+        },
+        {
+          "name": "Subtask 2",
+          "points": 20,
+          "description": "L = 1 và R = N."
+        },
+        {
+          "name": "Subtask 3",
+          "points": 20,
+          "description": "L = R."
+        },
+        {
+          "name": "Subtask 4",
+          "points": 45,
+          "description": "Không có giới hạn bổ sung."
+        }
+      ]
+    }
+  ]
+}
