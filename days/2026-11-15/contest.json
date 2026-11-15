@@ -1,0 +1,42 @@
+{
+  "title": "HSGQG Tin học — 15/11/2026 — Phân đoạn tối ưu",
+  "durationMinutes": 120,
+  "problems": [
+    {
+      "id": "BATCHCOST",
+      "title": "Phân đoạn tối ưu",
+      "timeLimitMs": 3000,
+      "memoryLimitMb": 256,
+      "statement": "Một dây chuyền có N công việc được sắp theo thứ tự cố định. Công việc thứ i có khối lượng A_i. Cần chia toàn bộ công việc thành các lô không rỗng, mỗi lô gồm một đoạn liên tiếp của dãy. Nếu một lô gồm các công việc từ l đến r, chi phí xử lý lô đó bằng (A_l + A_(l+1) + ... + A_r)^2 + C, trong đó C là chi phí khởi động cố định cho mỗi lô. Hãy tìm cách chia sao cho tổng chi phí của tất cả các lô là nhỏ nhất.",
+      "input": "Dòng đầu chứa hai số nguyên N và C. Dòng thứ hai chứa N số nguyên dương A_1, A_2, ..., A_N.",
+      "output": "In ra một số nguyên duy nhất: tổng chi phí nhỏ nhất có thể đạt được.",
+      "constraints": "1 <= N <= 200000; 0 <= C <= 1000000; 1 <= A_i <= 5; tổng A_i <= 1000000. Đáp án không vượt quá 1000001000000 và nằm trong kiểu số nguyên 64-bit có dấu.",
+      "sampleInput": "4 5\n1 2 3 4\n",
+      "sampleOutput": "49\n",
+      "explanation": "Chia thành các lô [1,2], [3], [4] có chi phí lần lượt 14, 14, 21; tổng bằng 49. Xét tất cả các cách đặt ranh giới giữa bốn công việc cho thấy không có cách chia nào có chi phí nhỏ hơn.",
+      "hint": "Đặt P_i là tổng i phần tử đầu tiên và dp[i] là chi phí nhỏ nhất để xử lý i công việc đầu. Hãy xét vị trí bắt đầu của lô cuối cùng, rồi khai triển bình phương của hiệu hai tổng tiền tố. Do mọi A_i đều dương, dãy tổng tiền tố tăng nghiêm ngặt; tính chất này có thể giúp tối ưu các phép chuyển trạng thái.",
+      "subtasks": [
+        {
+          "name": "Subtask 1",
+          "points": 15,
+          "description": "N <= 500."
+        },
+        {
+          "name": "Subtask 2",
+          "points": 20,
+          "description": "C = 0."
+        },
+        {
+          "name": "Subtask 3",
+          "points": 25,
+          "description": "N <= 5000."
+        },
+        {
+          "name": "Subtask 4",
+          "points": 40,
+          "description": "Không có giới hạn bổ sung."
+        }
+      ]
+    }
+  ]
+}
