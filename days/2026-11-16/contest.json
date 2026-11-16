@@ -1,0 +1,42 @@
+{
+  "title": "HSGQG Tin học — 16/11/2026 — Cầu quan trọng",
+  "durationMinutes": 120,
+  "problems": [
+    {
+      "id": "BRIDGESUM",
+      "title": "Cầu quan trọng",
+      "timeLimitMs": 3000,
+      "memoryLimitMb": 256,
+      "statement": "Cho một đa đồ thị vô hướng gồm N đỉnh và M cạnh. Đồ thị có thể không liên thông và có thể có nhiều cạnh nối cùng một cặp đỉnh; không có khuyên. Một cạnh là cầu nếu xóa riêng cạnh đó làm tăng số thành phần liên thông. Với mỗi cầu e, gọi C_e là thành phần liên thông ban đầu chứa e. Khi xóa e, C_e tách thành hai phần có x_e và |C_e|-x_e đỉnh. Hãy tính tổng x_e*(|C_e|-x_e) trên tất cả các cầu. Nếu không có cầu, in 0.",
+      "input": "Dòng đầu chứa N và M. M dòng tiếp theo, mỗi dòng chứa hai số u_i, v_i là hai đầu mút của cạnh thứ i.",
+      "output": "In một số nguyên duy nhất là tổng cần tìm.",
+      "constraints": "1 <= N <= 200000; 0 <= M <= 200000; 1 <= u_i,v_i <= N; u_i != v_i. Không có khuyên; cạnh song song được phép. Đáp án nằm trong số nguyên 64-bit có dấu.",
+      "sampleInput": "7 6\n1 2\n2 3\n2 4\n4 5\n6 7\n6 7\n",
+      "sampleOutput": "18\n",
+      "explanation": "Các cạnh (1,2), (2,3), (2,4), (4,5) là cầu. Thành phần liên thông chứa chúng có 5 đỉnh. Số đỉnh ở hai phía lần lượt là (1,4), (1,4), (2,3), (1,4), nên tổng là 1*4 + 1*4 + 2*3 + 1*4 = 18. Hai cạnh song song nối 6 và 7 không phải cầu.",
+      "hint": "Trong DFS, lưu thời điểm vào đỉnh và giá trị thấp nhất có thể quay về bằng cạnh cây hoặc cạnh ngược. Đồng thời tính kích thước cây con. Chú ý đồ thị có cạnh song song: cần phân biệt cạnh cha bằng mã cạnh, không chỉ bằng đỉnh cha. Với N lớn, hãy cân nhắc độ sâu ngăn xếp của DFS đệ quy.",
+      "subtasks": [
+        {
+          "name": "Subtask 1",
+          "points": 15,
+          "description": "N <= 20, M <= 40."
+        },
+        {
+          "name": "Subtask 2",
+          "points": 20,
+          "description": "Đồ thị là rừng (không có chu trình)."
+        },
+        {
+          "name": "Subtask 3",
+          "points": 25,
+          "description": "Đồ thị liên thông và không có cạnh song song."
+        },
+        {
+          "name": "Subtask 4",
+          "points": 40,
+          "description": "Không có giới hạn bổ sung."
+        }
+      ]
+    }
+  ]
+}
