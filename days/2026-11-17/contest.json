@@ -1,0 +1,42 @@
+{
+  "title": "HSGQG Tin học — 17/11/2026 — Tiền tố lặp lại",
+  "durationMinutes": 120,
+  "problems": [
+    {
+      "id": "PREFIXECHO",
+      "title": "Tiền tố lặp lại",
+      "timeLimitMs": 2000,
+      "memoryLimitMb": 256,
+      "statement": "Cho xâu S gồm N ký tự Latin thường. Một lần xuất hiện của xâu con được xác định bởi vị trí bắt đầu; các lần xuất hiện được phép chồng lấn. Với mỗi k từ 1 đến N, hãy tìm độ dài lớn nhất L của một tiền tố không rỗng S[1..L] xuất hiện trong S tại ít nhất k vị trí bắt đầu khác nhau. Nếu không tồn tại tiền tố như vậy, kết quả tương ứng là 0.",
+      "input": "Dòng 1 chứa số nguyên N. Dòng 2 chứa xâu S có đúng N ký tự.",
+      "output": "In N số nguyên b1, b2, ..., bN trên một dòng; bk là độ dài lớn nhất của tiền tố xuất hiện ít nhất k lần. Các số cách nhau bởi dấu cách.",
+      "constraints": "1 <= N <= 1000000. S chỉ gồm các chữ cái Latin thường từ 'a' đến 'z'.",
+      "sampleInput": "5\\nababa\\n",
+      "sampleOutput": "5 3 1 0 0\\n",
+      "explanation": "Tiền tố 'a' xuất hiện 3 lần; 'ab' và 'aba' mỗi tiền tố xuất hiện 2 lần; 'abab' và 'ababa' xuất hiện 1 lần. Vì vậy đáp án lần lượt là 5, 3, 1, 0, 0.",
+      "hint": "Với mỗi vị trí i, hãy xét độ dài tiền tố chung dài nhất giữa S và hậu tố bắt đầu tại i. Vị trí đó đóng góp một lần xuất hiện cho mọi độ dài không vượt quá giá trị vừa tìm được. Sau khi đếm số vị trí đóng góp cho từng độ dài, hãy đảo mối quan hệ giữa độ dài và số lần xuất hiện.",
+      "subtasks": [
+        {
+          "name": "Subtask 1",
+          "points": 15,
+          "description": "N <= 2000."
+        },
+        {
+          "name": "Subtask 2",
+          "points": 25,
+          "description": "N <= 100000."
+        },
+        {
+          "name": "Subtask 3",
+          "points": 25,
+          "description": "N <= 500000."
+        },
+        {
+          "name": "Subtask 4",
+          "points": 35,
+          "description": "Không có giới hạn bổ sung."
+        }
+      ]
+    }
+  ]
+}
