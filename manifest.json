@@ -272,7 +272,7 @@
       "contest": "days/2026-11-18/contest.json",
       "tests": "days/2026-11-18/tests.json",
       "contestSha256": "e42e20e6ef28124faf3f3f13507516300701de0f5bc8b65dde2053ab61582500",
-      "testsSha256": "38fd91b19fc1665ade5277006836c175e7607296acefce942a575db182ebe681"
+      "testsSha256": "6ea4aed902f9c854e5ad3497a7a2ede18c3c0ff89e0def784b4305dbba292add"
     }
   ]
 }
