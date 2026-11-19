@@ -1,0 +1,42 @@
+{
+  "title": "HSGQG Tin học — 19/11/2026 — Đoạn tổng giới hạn",
+  "durationMinutes": 120,
+  "problems": [
+    {
+      "id": "BOUNDEDSUM",
+      "title": "Đoạn tổng giới hạn",
+      "timeLimitMs": 2000,
+      "memoryLimitMb": 256,
+      "statement": "Cho dãy số nguyên A gồm N phần tử và hai số nguyên L, R. Hãy tìm tổng lớn nhất của một đoạn con liên tiếp không rỗng có độ dài nằm trong [L,R]. Dãy A có thể chứa số âm, số 0 và số dương.",
+      "input": "Dòng 1 chứa ba số nguyên N, L, R. Dòng 2 chứa N số nguyên A1,...,AN.",
+      "output": "In một số nguyên duy nhất: tổng lớn nhất của đoạn con có độ dài từ L đến R.",
+      "constraints": "1 <= N <= 200000; 1 <= L <= R <= N; -1000000000 <= Ai <= 1000000000. Kết quả nằm trong miền số nguyên 64-bit có dấu.",
+      "sampleInput": "8 3 5\n4 -7 6 2 -1 5 -9 8\n",
+      "sampleOutput": "12\n",
+      "explanation": "Đoạn [3,6] có các phần tử 6, 2, -1, 5, độ dài 4 và tổng bằng 12. Đây là một đoạn hợp lệ vì 3 <= 4 <= 5. Không có đoạn con nào có độ dài từ 3 đến 5 đạt tổng lớn hơn 12.",
+      "hint": "Đặt P[0]=0 và P[i] là tổng i phần tử đầu tiên. Với một điểm kết thúc r cố định, chỉ một khoảng liên tiếp các chỉ số của mảng P có thể làm điểm bắt đầu hợp lệ. Khi r tăng, khoảng chỉ số này cũng dịch chuyển đều; hãy tận dụng tính chất đó để không phải xét lại mọi điểm bắt đầu ở mỗi bước.",
+      "subtasks": [
+        {
+          "name": "Subtask 1",
+          "points": 20,
+          "description": "N <= 2000."
+        },
+        {
+          "name": "Subtask 2",
+          "points": 20,
+          "description": "L = R."
+        },
+        {
+          "name": "Subtask 3",
+          "points": 20,
+          "description": "Ai >= 0 với mọi i."
+        },
+        {
+          "name": "Subtask 4",
+          "points": 40,
+          "description": "Không có giới hạn bổ sung."
+        }
+      ]
+    }
+  ]
+}
