@@ -286,7 +286,7 @@
       "contest": "days/2026-11-20/contest.json",
       "tests": "days/2026-11-20/tests.json",
       "contestSha256": "64a54cae31f5e2c069578783d26872e8fc8cbde4e50607a45c72dead6ca1df65",
-      "testsSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      "testsSha256": "3b3faaa39f588c5047764b5d86a5134f6d1120601ac586986d1665e2cb3e709c"
     }
   ]
 }
