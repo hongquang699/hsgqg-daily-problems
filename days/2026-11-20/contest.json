@@ -1,0 +1,42 @@
+{
+  "title": "HSGQG Tin học — 20/11/2026 — Tổng GCD các đoạn con",
+  "durationMinutes": 120,
+  "problems": [
+    {
+      "id": "GCDSUM",
+      "title": "Tổng GCD các đoạn con",
+      "timeLimitMs": 2000,
+      "memoryLimitMb": 256,
+      "statement": "Cho dãy số nguyên dương A gồm N phần tử. Với mỗi đoạn con liên tiếp không rỗng [l,r], gọi gcd(l,r) là ước chung lớn nhất của các phần tử A[l], A[l+1], ..., A[r]. Hãy tính tổng gcd(l,r) trên tất cả các đoạn con của dãy và lấy phần dư khi chia cho 1 000 000 007.",
+      "input": "Dòng đầu chứa số nguyên N. Dòng thứ hai chứa N số nguyên dương A1, A2, ..., AN.",
+      "output": "In ra một số nguyên duy nhất là tổng các ước chung lớn nhất của tất cả các đoạn con không rỗng, lấy modulo 1 000 000 007.",
+      "constraints": "1 <= N <= 200000; 1 <= Ai <= 1000000000.",
+      "sampleInput": "4\n2 6 3 9\n",
+      "sampleOutput": "33\n",
+      "explanation": "Các đoạn có độ dài 1 đóng góp 2+6+3+9=20. Các đoạn có độ dài 2 đóng góp 2+3+3=8. Hai đoạn có độ dài 3 đóng góp 1+3=4; đoạn có độ dài 4 đóng góp 1. Tổng là 20+8+4+1=33.",
+      "hint": "Cố định đầu phải r và xét GCD của mọi đoạn con kết thúc tại r. Khi đầu trái dịch dần về bên trái, GCD mới luôn là một ước của GCD trước đó. Hãy khai thác việc số giá trị GCD phân biệt trên các đoạn kết thúc tại cùng một vị trí bị chặn bởi số lượng ước theo một chuỗi giảm nghiêm ngặt.",
+      "subtasks": [
+        {
+          "name": "Subtask 1",
+          "points": 15,
+          "description": "N <= 300."
+        },
+        {
+          "name": "Subtask 2",
+          "points": 20,
+          "description": "N <= 5000."
+        },
+        {
+          "name": "Subtask 3",
+          "points": 25,
+          "description": "1 <= Ai <= 30 với mọi i."
+        },
+        {
+          "name": "Subtask 4",
+          "points": 40,
+          "description": "Không có giới hạn bổ sung."
+        }
+      ]
+    }
+  ]
+}
